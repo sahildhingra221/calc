@@ -53,7 +53,7 @@ $(document).ready(function(){
           <input type="number" name="qbbo" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Back odds</label>
         </div>
-        <div class="input-group">
+        <div class="input-group float-right-abs">
           <input type="number" name="qbbc" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Back commision</label>
         </div>
@@ -70,13 +70,25 @@ $(document).ready(function(){
           <input type="number" name="qblo" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Lay odds (decimal)</label>
         </div>
-        <div class="input-group">
+        <div class="input-group float-right-abs">
           <input type="number" name="qblc" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Lay commision</label>
         </div>
       </div>
       <div class="qb-lay-input-col2">
-        
+        <div class="qb-lay-vals">
+          <div class="qb-lay-vals1">
+            <label>Min &euro;</label>
+            <input type="text" class="qblaymin" value="0">
+          </div>
+          <div class="qb-lay-vals2">
+            &euro; <span class="qb-ls">0.00</span>
+          </div>
+          <div class="qb-lay-vals3">
+            <label>Max &euro;</label>
+            <input type="text" class="qblaymax" value="0">
+          </div>
+        </div>
       </div>
     </div>
     
@@ -87,33 +99,59 @@ $(document).ready(function(){
       </h3>
     </div>
     
+    <!-- Result -->
+    <div class="result">
+      <div class="result-wrapper">
+        <div class="result-row result-row1">
+          <div class="result-row-col1 result-row-col"></div>
+          <div class="result-row-col2 result-row-col">Bookie</div>
+          <div class="result-row-col3 result-row-col">Exchange</div>
+          <div class="result-row-col4 result-row-col"><span>Total</span></div>
+        </div>
+        <div class="result-row result-row2">
+          <div class="result-row-col1 result-row2-col1 result-row-col">If <b>back</b> (bookie) bet wins</div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total">0.00</span></b></div>
+        </div>
+        <div class="result-row result-row3">
+          <div class="result-row-col1 result-row3-col1 result-row-col">If <b>lay</b> (exchange) bet wins</div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total">0.00</span></b></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optimal Underlay/Overlay -->
+    <div class="optimal">
+      <div class="optimal-wrapper">
+        <div class="optimal-containers optimal-underlay">
+          <h5 class="optimal-title">Optimal Underlay</h5>
+          <div class="optimal-result">
+            <p class="result-ouls">Lay stake required: &euro; <span class="ouls">0.00</span></p>
+            <p class="result-oube">Total exchange liability: &euro; <span class="oube">0.00</span></p><br>
+            <p class="result-oubt">If back (bookie) bet wins: &euro; <span class="oubt">0.00</span></p>
+            <p class="result-oult">If lay (exchange) bet wins: &euro; <span class="oult">0.00</span></p>
+          </div>
+        </div>
+        <div class="optimal-containers optimal-overlay">
+          <h5 class="optimal-title">Optimal Overlay</h5>
+          <div class="optimal-result">
+            <p class="result-ools">Lay stake required: &euro; <span class="ools">0.00</span></p>
+            <p class="result-oobe">Total exchange liability: &euro; <span class="oobe">0.00</span></p><br>
+            <p class="result-oobt">If back (bookie) bet wins: &euro; <span class="oobt">0.00</span></p>
+            <p class="result-oolt">If lay (exchange) bet wins: &euro; <span class="oolt">0.00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </section>
   <section class="forfb container">Free Bet Section</section>
   <section class="forrfb container">Risk-Free bet Section</section>
   
   <!-- Result Section -->
-  <section class="result">
-    <div class="result-wrapper">
-      <div class="result-row result-row1">
-        <div class="result-row-col1 result-row-col"></div>
-        <div class="result-row-col2 result-row-col">Bookie</div>
-        <div class="result-row-col3 result-row-col">Exchange</div>
-        <div class="result-row-col4 result-row-col"><span>Total</span></div>
-      </div>
-      <div class="result-row result-row2">
-        <div class="result-row-col1 result-row2-col1 result-row-col">If <b>back</b> (bookie) bet wins</div>
-        <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win">0.00</span></div>
-        <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex">0.00</span></div>
-        <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total">0.00</span></b></div>
-      </div>
-      <div class="result-row result-row3">
-        <div class="result-row-col1 result-row3-col1 result-row-col">If <b>lay</b> (exchange) bet wins</div>
-        <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win">0.00</span></div>
-        <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex">0.00</span></div>
-        <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total">0.00</span></b></div>
-      </div>
-    </div>
-  </section>
 
   <script>
   
@@ -123,25 +161,71 @@ $(document).ready(function(){
         var qbbc = $('input[name=qbbc]').val()-0;
         var qblo = $('input[name=qblo]').val()-0;
         var qblc = $('input[name=qblc]').val()-0;
+        var one = 1;
+        var onedone = 1.1;
         var qbbcp = qbbc / 100;
         var qblcp = qblc / 100;
-        var qbbobc = qbbo - qbbcp;
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+        var qbbobcwqbbs = qbbobc * qbbs;
         var qblolc = qblo - qblcp;
-        var qbbobcbylolc = qbbobc / qblolc;
-        var qblsr = qbbobcbylolc * qbbs;
-        var lostqbbs = -qbbs;
-        var lostqblsr = -qblsr;
-        var qblayex = qblsr*(1-qblcp);
-        var qbbacktotal = qbbs+lostqblsr;
-        var qblaytotal = lostqbbs + qblayex;
-        //$('.qb-ls').text(qblsr);
-        $('.qb-ls').text(qblsr.toFixed(2));
-        $('.qb-back-win').text(qbbs.toFixed(2));
-        $('.qb-lay-win').text(lostqbbs.toFixed(2));
-        $('.qb-back-ex').text(lostqblsr.toFixed(2));
-        $('.qb-lay-ex').text(qblayex.toFixed(2));
-        $('.qb-back-total').text(qbbacktotal.toFixed(2));
-        $('.qb-lay-total').text(qblaytotal.toFixed(2));
+        var qbbobcbylolc = qbbobcwqbbs / qblolc;
+        var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var qblb = -qbbs;
+        var qbbe = -(qbbobcbylolc * (qblo - one) );
+        var qble = qbbobcbylolc * (one - qblcp);
+        var qbbbsqbbe = qbbb + qbbe;
+        var qblbsqble = qblb + qble;
+      
+        var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+        var oolsf = qbbs * (one + qblcp);
+      
+        var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var oube = -(oulsf * (qblo - one));
+        var oulb = -qbbs;
+        var oule = oulsf * (one - qblcp);
+        var oubbsoube = oubb + oube;
+        var oulbsoule = oulb + oule;
+      
+        var oubef = oubb;
+        var oubtf = oubbsoube;
+        var oultf = oulbsoule;
+      
+      
+        var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+        var oobe = -(oolsf * (qblo - one));
+        var oolb = -qbbs;
+        var oole = oolsf * (one - qblcp);
+        var oobbsoobe = oobb + oobe;
+        var oolbsoole = oolb + oole;
+      
+        var oobef = oobe;
+        var oobtf = oobbsoobe;
+        var ooltf = oolbsoole;
+      
+        var qblaymin = qbbs / (qbbo + one) * qbbo;
+        var qblaymax = qbbs * onedone;
+      
+        
+      
+        $('.qb-ls').text(qbbobcbylolc.toFixed(2));
+        $('.qb-back-win').text(qbbb.toFixed(2));
+        $('.qb-lay-win').text(qblb.toFixed(2));
+        $('.qb-back-ex').text(qbbe.toFixed(2));
+        $('.qb-lay-ex').text(qble.toFixed(2));
+        $('.qb-back-total').text(qbbbsqbbe.toFixed(2));
+        $('.qb-lay-total').text(qblbsqble.toFixed(2));
+      
+        $('.ouls').text(oulsf.toFixed(2));
+        $('.oube').text(oubef.toFixed(2));
+        $('.oubt').text(oubtf.toFixed(2));
+        $('.oult').text(oultf.toFixed(2));
+      
+        $('.ools').text(oolsf.toFixed(2));
+        $('.oobe').text(oobef.toFixed(2));
+        $('.oobt').text(oobtf.toFixed(2));
+        $('.oolt').text(ooltf.toFixed(2));
+        $('.qblaymin').val(qblaymin.toFixed(2));
+        $('.qblaymax').val(qblaymax.toFixed(2));
     });
   </script>
   

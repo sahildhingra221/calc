@@ -90,14 +90,63 @@ input[type=number]::-webkit-outer-spin-button {
 
 .qb-lay-input-col1{
   margin-top: 15px;
+  width: 100%;
+}
+
+input[type=number] {
+  width: 100%;
 }
 
 .qb-lay-input-col2{
+  margin-top: 20px;
+  position: relative;
+}
+.float-right-abs{
+  float: right;
+  right: 22px;
+}
+.qb-lay-vals{
+  display: -webkit-box;
+  color: white;
+  position: relative;
+}
+
+.qb-lay-vals label{
+  background: #E9D3AB;
+  color: white;
+  padding:10px;
+  font-size: 18px;
+  border-radius: 7px 0 0 7px;
+}
+.qb-lay-vals input{
+  background: #E9D3AB;
+  color: white;
+  padding:10px;
+  font-size: 18px;
+  border-radius: 0 7px 7px 0;
+  border:0;
+  width: 45px;
+  margin-left: -4px;
+  margin-bottom: 4px;
+}
+.qb-lay-vals input:hover{
+  background:#E3BF7F;
+}
+
+.qb-lay-vals3{
+  position: absolute;
+  right: 0;
+}
+.qb-lay-vals2 {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 20px;
 }
 
 /* Lay Stake Section */
 .qb-laystake{
-  background:black;
+  background:#262F30;
   color: white; 
   border-radius: 0 0 7px 7px;
   text-align: center;
@@ -113,7 +162,7 @@ input[type=number]::-webkit-outer-spin-button {
 	position: absolute;
 	pointer-events: none;
 	border-color: rgba(0, 0, 0, 0);
-	border-bottom-color: #000000;
+	border-bottom-color: #262F30;
 	border-width: 12px;
 	margin-left: 0;
 }
@@ -186,13 +235,13 @@ input[type="number"]{
   text-align: right;
 }
 .result-row1{
-  background:#81eed8;
+  background:#e9ecef;
 }
 .result-row2{
   background:#f8f9fa;
 }
 .result-row3{
-  background:#81eed8;
+  background:#e9ecef;
 }
 .result-row{
   display: -webkit-box;
@@ -254,4 +303,34 @@ input[type="number"]{
   border-left-color: #cc668a;
   border-width: 26px;
   margin-top: -26px;
+}
+
+/* Optimal Under/Over Lay Section */
+.optimal {
+  margin-top: 20px;
+  border-radius: 7px;
+  background: #e9ecef;
+  text-align: center;
+}
+.optimal-wrapper{
+  display: -webkit-box;
+  padding: 20px;
+}
+.optimal-containers{
+  width: 50%;
+}
+.optimal-title{
+  font-weight: 500;
+  font-size: 16px;
+  color: #868e96;
+}
+.optimal-result{
+  padding: 18px 0;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: light;
+  color: #555;
+}
+.result-ouls, .result-ools {
+  font-weight: bold;
 }
