@@ -1,0 +1,257 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  margin: 20px 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: roboto;
+}
+
+/* Bet Selecting Section */
+.bet-selection{
+  max-width: 788px;
+  margin: 0 auto 20px;
+  border-radius: 7px;
+  background: #e9ecef;
+}
+
+.bet-selection-wrapper{
+  padding: 25px;
+}
+
+.bet-selection-title{
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.selection-options{
+  font-size: 24px;
+  line-height: 38px;
+}
+
+.container{
+  display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.qb-calculator{
+  max-width: 788px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Bookie Section */
+.qb-bookie{
+  background: #262F30;
+  padding:25px 20px 35px;
+  border-radius:5px 5px 0 0;
+}
+
+.qb-bookie-title{
+  color:#fff;
+  font-family: Roboto;
+  font-weight: 700;
+}
+
+.qb-bookie-input-col1{
+  margin-top: 15px;
+}
+
+.qb-bookie-input-col2{
+  margin-top: 20px;
+}
+
+/* Lay Section */
+.qb-lay{
+  background: #E6B051;
+  padding:25px 20px 35px;
+}
+
+.qb-lay input{
+  background:#E9D3AB;
+}
+.qb-lay input:hover{
+  background:#E3BF7F;
+}
+
+.qb-lay-title{
+  color:#fff;
+  font-family: Roboto;
+  font-weight: 700;
+}
+
+.qb-lay-input-col1{
+  margin-top: 15px;
+}
+
+.qb-lay-input-col2{
+}
+
+/* Lay Stake Section */
+.qb-laystake{
+  background:black;
+  color: white; 
+  border-radius: 0 0 7px 7px;
+  text-align: center;
+  position: relative;
+}
+.qb-laystake:after {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #000000;
+	border-width: 12px;
+	margin-left: 0;
+}
+.qb-laystake-title{
+  padding: 14px;
+  font-size: 25px;
+  font-family: roboto;
+  font-weight: normal;
+}
+
+input {
+  //background: #2E575B;
+  background: #2A5C61;
+  border: solid 2px #21a1e1;
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  transition: 0.1s ease-in;
+}
+input:hover{
+  //background: #2F474A;
+  background: #24474B;
+}
+input:focus, input:active {
+  outline: none;
+}
+input[type="number"]{
+  border: none;
+  border-bottom: solid 2px #21a1e1;
+}
+.input-group {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+  margin-top:25px;
+}
+.input-group input {
+  padding:10px 15px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: roboto;
+  //font-style: italic;
+  font-size: 20px;
+  color: white;
+  pointer-events: none;
+  transition: all 0.15s ease-out 0s;
+}
+.input-group input:focus + label,
+.input-group input.has-value + label {
+  top: -17px;
+  font-size: 17px;
+  color: #aaa;
+  left:0px;
+}
+
+/* Result Section */
+.result{
+  max-width: 788px;
+  margin: 20px auto 0;
+  border-radius: 7px;
+}
+.result-wrapper{
+  text-align: right;
+}
+.result-row1{
+  background:#81eed8;
+}
+.result-row2{
+  background:#f8f9fa;
+}
+.result-row3{
+  background:#81eed8;
+}
+.result-row{
+  display: -webkit-box;
+  font-size: 20px;
+  font-weight: light;
+}
+.result-row-col{
+  padding: 15px 0; 
+}
+.result-row-col1{
+  width: 40%;
+}
+.result-row-col2{
+  width: 20%;
+}
+.result-row-col3{
+  width: 20%;
+}
+.result-row-col4{
+  width: 20%;
+}
+.result-row-col4 span{
+  margin-right: 20px;
+}
+.result-row2-col1{
+  position: relative;
+  background: #4fc3f7;
+  color:white;
+}
+.result-row2-col1:after{
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(79, 195, 247, 0);
+  border-left-color: #4fc3f7;
+  border-width: 26px;
+  margin-top: -26px;
+}
+.result-row3-col1{
+  position: relative;
+  background: #cc668a;
+  color:white;
+}
+.result-row3-col1:after{
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(204, 102, 138, 0);
+  border-left-color: #cc668a;
+  border-width: 26px;
+  margin-top: -26px;
+}

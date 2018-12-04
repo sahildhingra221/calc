@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Betting Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+        var targetBox = $("." + inputValue);
+        $(".container").not(targetBox).hide();
+        $(targetBox).show();
+    });
+});
+</script>
+</head>
+<body>
+
+  <section class="bet-selection">
+    <div class="bet-selection-wrapper">
+      <h1 class="bet-selection-title">
+        Select bet type
+      </h1>
+      <div class="selection-options">
+        <label><input type="radio" name="selector" value="forqb" checked> <b>Qualifying Bet</b> - Use when placing back and lay bets to qualify for a free bet.</label><br>
+        <label><input type="radio" name="selector" value="forfb"> <b>Free Bet</b> - Use when extracting profit from a free bet or bonus.</label><br>
+        <label><input type="radio" name="selector" value="forrfb"> <b>Risk-Free Bet</b> - Use to calculate the lay stake for a risk-free bet.</label>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Qualifying Bet Calculations -->
+  <section class="forqb container qb-calculator">
+  
+   <!-- Back Bet (Bookie) Section -->
+    <div class="qb-bookie animate-lable">
+      <h1 class="qb-bookie-title">
+        Back Bet (Bookie)
+      </h1>
+      <div class="qb-bookie-input-col1">
+        <div class="input-group">
+          <input type="number" name="qbbs" min="-999999999999" step="0.0000000000001" value="" required="">
+          <label>Back stake</label>
+        </div>
+      </div>
+      <div class="qb-bookie-input-col2">
+        <div class="input-group">
+          <input type="number" name="qbbo" min="-999999999999" step="0.0000000000001" value="" required="">
+          <label>Back odds</label>
+        </div>
+        <div class="input-group">
+          <input type="number" name="qbbc" min="-999999999999" step="0.0000000000001" value="" required="">
+          <label>Back commision</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Lay Bet (Betting Exchange) Section -->
+    <div class="qb-lay animate-lable">
+      <h2 class="qb-lay-title">
+        Lay Bet (Betting Exchange)
+      </h2>
+      <div class="qb-lay-input-col1">
+        <div class="input-group">
+          <input type="number" name="qblo" min="-999999999999" step="0.0000000000001" value="" required="">
+          <label>Lay odds (decimal)</label>
+        </div>
+        <div class="input-group">
+          <input type="number" name="qblc" min="-999999999999" step="0.0000000000001" value="" required="">
+          <label>Lay commision</label>
+        </div>
+      </div>
+      <div class="qb-lay-input-col2">
+        
+      </div>
+    </div>
+    
+    <!-- Lay stake required Section -->
+    <div class="qb-laystake">
+      <h3 class="qb-laystake-title">
+          Lay stake required: &euro; <span class="qb-ls">0.00</span>
+      </h3>
+    </div>
+    
+  </section>
+  <section class="forfb container">Free Bet Section</section>
+  <section class="forrfb container">Risk-Free bet Section</section>
+  
+  <!-- Result Section -->
+  <section class="result">
+    <div class="result-wrapper">
+      <div class="result-row result-row1">
+        <div class="result-row-col1 result-row-col"></div>
+        <div class="result-row-col2 result-row-col">Bookie</div>
+        <div class="result-row-col3 result-row-col">Exchange</div>
+        <div class="result-row-col4 result-row-col"><span>Total</span></div>
+      </div>
+      <div class="result-row result-row2">
+        <div class="result-row-col1 result-row2-col1 result-row-col">If <b>back</b> (bookie) bet wins</div>
+        <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win">0.00</span></div>
+        <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex">0.00</span></div>
+        <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total">0.00</span></b></div>
+      </div>
+      <div class="result-row result-row3">
+        <div class="result-row-col1 result-row3-col1 result-row-col">If <b>lay</b> (exchange) bet wins</div>
+        <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win">0.00</span></div>
+        <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex">0.00</span></div>
+        <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total">0.00</span></b></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  
+    $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input[name=qblc]').keyup(function() {
+        var qbbs = $('input[name=qbbs]').val()-0;
+        var qbbo = $('input[name=qbbo]').val()-0;
+        var qbbc = $('input[name=qbbc]').val()-0;
+        var qblo = $('input[name=qblo]').val()-0;
+        var qblc = $('input[name=qblc]').val()-0;
+        var qbbcp = qbbc / 100;
+        var qblcp = qblc / 100;
+        var qbbobc = qbbo - qbbcp;
+        var qblolc = qblo - qblcp;
+        var qbbobcbylolc = qbbobc / qblolc;
+        var qblsr = qbbobcbylolc * qbbs;
+        var lostqbbs = -qbbs;
+        var lostqblsr = -qblsr;
+        var qblayex = qblsr*(1-qblcp);
+        var qbbacktotal = qbbs+lostqblsr;
+        var qblaytotal = lostqbbs + qblayex;
+        //$('.qb-ls').text(qblsr);
+        $('.qb-ls').text(qblsr.toFixed(2));
+        $('.qb-back-win').text(qbbs.toFixed(2));
+        $('.qb-lay-win').text(lostqbbs.toFixed(2));
+        $('.qb-back-ex').text(lostqblsr.toFixed(2));
+        $('.qb-lay-ex').text(qblayex.toFixed(2));
+        $('.qb-back-total').text(qbbacktotal.toFixed(2));
+        $('.qb-lay-total').text(qblaytotal.toFixed(2));
+    });
+  </script>
+  
+</body>
+</html>
