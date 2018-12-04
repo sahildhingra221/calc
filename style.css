@@ -105,6 +105,35 @@ input[type=number] {
   float: right;
   right: 22px;
 }
+.qb-lay-btns{
+  display: -webkit-box;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.qb-lay-btn{
+  width: 33.33%;
+}
+.qb-lay-btn button{
+  border: 0;
+  outline: 0;
+  background: #E9D3AB;
+  color: white;
+  font-size-adjust: 22px;
+  font-weight:bold;
+  padding:10px 20px;
+  border-radius: 20px;
+  transition:0.1s ease-in;
+}
+.qb-lay-btn button:hover{
+  background:#E3BF7F;
+}
+.qb-btn-standard{
+  text-align: center;
+}
+.qb-btn-overlay{
+  text-align: right;
+}
+
 .qb-lay-vals{
   display: -webkit-box;
   color: white;

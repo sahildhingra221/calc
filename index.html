@@ -44,17 +44,17 @@ $(document).ready(function(){
       </h1>
       <div class="qb-bookie-input-col1">
         <div class="input-group">
-          <input type="number" name="qbbs" min="-999999999999" step="0.0000000000001" value="" required="">
+          <input type="number" name="qbbs" id="qbbs" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Back stake</label>
         </div>
       </div>
       <div class="qb-bookie-input-col2">
         <div class="input-group">
-          <input type="number" name="qbbo" min="-999999999999" step="0.0000000000001" value="" required="">
+          <input type="number" name="qbbo" id="qbbo" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Back odds</label>
         </div>
         <div class="input-group float-right-abs">
-          <input type="number" name="qbbc" min="-999999999999" step="0.0000000000001" value="" required="">
+          <input type="number" name="qbbc" id="qbbc" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Back commision</label>
         </div>
       </div>
@@ -67,26 +67,43 @@ $(document).ready(function(){
       </h2>
       <div class="qb-lay-input-col1">
         <div class="input-group">
-          <input type="number" name="qblo" min="-999999999999" step="0.0000000000001" value="" required="">
+          <input type="number" name="qblo" id="qblo" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Lay odds (decimal)</label>
         </div>
         <div class="input-group float-right-abs">
-          <input type="number" name="qblc" min="-999999999999" step="0.0000000000001" value="" required="">
+          <input type="number" name="qblc" id="qblc" min="-999999999999" step="0.0000000000001" value="" required="">
           <label>Lay commision</label>
         </div>
       </div>
       <div class="qb-lay-input-col2">
+        <div class="qb-lay-btns">
+          <div class="qb-lay-btn qb-btn-underlay">
+            <button onclick="trigUnderlay()">
+              UNDERLAY
+            </button>
+          </div>
+          <div class="qb-lay-btn qb-btn-standard">
+            <button onclick="trigStandard()">
+              STANDARD
+            </button>
+          </div>
+          <div class="qb-lay-btn qb-btn-overlay">
+            <button onclick="trigOverlay()">
+              OVERLAY
+            </button>
+          </div>
+        </div>
         <div class="qb-lay-vals">
           <div class="qb-lay-vals1">
             <label>Min &euro;</label>
-            <input type="text" class="qblaymin" value="0">
+            <input type="text" class="qblaymin" id="minv" value="0" onkeyup="minV()">
           </div>
           <div class="qb-lay-vals2">
             &euro; <span class="qb-ls">0.00</span>
           </div>
           <div class="qb-lay-vals3">
             <label>Max &euro;</label>
-            <input type="text" class="qblaymax" value="0">
+            <input type="text" class="qblaymax" id="maxv" value="0" onkeyup="maxV()">
           </div>
         </div>
       </div>
@@ -95,7 +112,7 @@ $(document).ready(function(){
     <!-- Lay stake required Section -->
     <div class="qb-laystake">
       <h3 class="qb-laystake-title">
-          Lay stake required: &euro; <span class="qb-ls">0.00</span>
+          Lay stake required: &euro; <span class="qb-ls" id="qb-ls">0.00</span>
       </h3>
     </div>
     
@@ -110,15 +127,15 @@ $(document).ready(function(){
         </div>
         <div class="result-row result-row2">
           <div class="result-row-col1 result-row2-col1 result-row-col">If <b>back</b> (bookie) bet wins</div>
-          <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win">0.00</span></div>
-          <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex">0.00</span></div>
-          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total">0.00</span></b></div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win" id="qb-back-win">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex" id="qb-back-ex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total" id="qb-back-total">0.00</span></b></div>
         </div>
         <div class="result-row result-row3">
           <div class="result-row-col1 result-row3-col1 result-row-col">If <b>lay</b> (exchange) bet wins</div>
-          <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win">0.00</span></div>
-          <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex">0.00</span></div>
-          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total">0.00</span></b></div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win" id="qb-lay-win">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex" id="qb-lay-ex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total" id="qb-lay-total">0.00</span></b></div>
         </div>
       </div>
     </div>
@@ -146,12 +163,97 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
-    
+    <input type="range" id="range" min="0.01" max="100.00" value="50%" step="0.01" style="width: 100%;">
   </section>
   <section class="forfb container">Free Bet Section</section>
   <section class="forrfb container">Risk-Free bet Section</section>
   
   <!-- Result Section -->
+
+  <script>
+    
+    function minV() {
+      var minv = document.getElementById("minv").value;
+      document.getElementById("range").min = minv;
+      var maxv = document.getElementById("maxv").value;
+      document.getElementById("range").max = maxv;
+    }
+    
+    function maxV() {
+      var maxv = document.getElementById("maxv").value;
+      document.getElementById("range").max = maxv;
+      var minv = document.getElementById("minv").value;
+      document.getElementById("range").min = minv;
+    }
+    
+    function trigUnderlay() {
+      var qbbs = document.getElementById("qbbs").value;
+      var qbbo = document.getElementById("qbbo").value;
+      var qbbc = document.getElementById("qbbc").value;
+      var qblo = document.getElementById("qblo").value;
+      var qblc = document.getElementById("qblc").value;
+      var one = 1;
+      var onedone = 1.1;
+      var qbbcp = qbbc / 100;
+      var qblcp = qblc / 100;
+      var qbbobc = qbbo - (qbbo - one) * qbbcp;
+      var qbbobcwqbbs = qbbobc * qbbs;
+      var qblolc = qblo - qblcp;
+      var qbbobcbylolc = qbbobcwqbbs / qblolc;
+      var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var qblb = -qbbs;
+      var qbbe = -(qbbobcbylolc * (qblo - one) );
+      var qble = qbbobcbylolc * (one - qblcp);
+      var qbbbsqbbe = qbbb + qbbe;
+      var qblbsqble = qblb + qble;
+
+      var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+      var oolsf = qbbs * (one + qblcp);
+
+      var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var oube = -(oulsf * (qblo - one));
+      var oulb = -qbbs;
+      var oule = oulsf * (one - qblcp);
+      var oubbsoube = oubb + oube;
+      var oulbsoule = oulb + oule;
+
+      var oubef = oubb;
+      var oubtf = oubbsoube;
+      var oultf = oulbsoule;
+
+
+      var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+      var oobe = -(oolsf * (qblo - one));
+      var oolb = -qbbs;
+      var oole = oolsf * (one - qblcp);
+      var oobbsoobe = oobb + oobe;
+      var oolbsoole = oolb + oole;
+
+      var oobef = oobe;
+      var oobtf = oobbsoobe;
+      var ooltf = oolbsoole;
+
+      var qblaymin = qbbs / (qbbo + one) * qbbo;
+      var qblaymax = qbbs * onedone;
+      
+      var add = parseFloat(qbbs)+parseFloat(qbbo);
+      document.getElementById("qb-ls").innerHTML = oulsf.toFixed(2);
+      document.getElementById("qb-back-win").innerHTML = oubb.toFixed(2);
+      document.getElementById("qb-lay-win").innerHTML = oulb.toFixed(2);
+      document.getElementById("qb-back-ex").innerHTML = oube.toFixed(2);
+      document.getElementById("qb-lay-ex").innerHTML = oule.toFixed(2);
+      document.getElementById("qb-back-total").innerHTML = oubbsoube.toFixed(2);
+      document.getElementById("qb-lay-total").innerHTML = oulbsoule.toFixed(2);
+      
+      //$('.qb-ls').text(qbbobcbylolc.toFixed(2));
+      //$('.qb-back-win').text(qbbb.toFixed(2));
+      //$('.qb-lay-win').text(qblb.toFixed(2));
+      //$('.qb-back-ex').text(qbbe.toFixed(2));
+      //$('.qb-lay-ex').text(qble.toFixed(2));
+      //$('.qb-back-total').text(qbbbsqbbe.toFixed(2));
+      //$('.qb-lay-total').text(qblbsqble.toFixed(2));
+    }
+  </script>
 
   <script>
   
@@ -224,9 +326,11 @@ $(document).ready(function(){
         $('.oobe').text(oobef.toFixed(2));
         $('.oobt').text(oobtf.toFixed(2));
         $('.oolt').text(ooltf.toFixed(2));
+      
         $('.qblaymin').val(qblaymin.toFixed(2));
         $('.qblaymax').val(qblaymax.toFixed(2));
     });
+    
   </script>
   
 </body>
