@@ -93,6 +93,9 @@ $(document).ready(function(){
             </button>
           </div>
         </div>
+        <div class="qb-lay-slider">
+          <input class="range" type="range" id="range" class="qbslider" id="qbRange" step="0.01" value="50%" style="width: 100%;">
+        </div>
         <div class="qb-lay-vals">
           <div class="qb-lay-vals1">
             <label>Min &euro;</label>
@@ -163,7 +166,17 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
-    <input type="range" id="range" min="0.01" max="100.00" value="50%" step="0.01" style="width: 100%;">
+
+    <script>
+    var qbslider = document.getElementById("range");
+    var qbso = document.getElementById("qb-ls");
+
+    qbslider.oninput = function() {
+      qbso.innerHTML = qbslider.value;
+      qbso.innerHTML = parseFloat(this.value).toFixed(2);
+      
+    }
+    </script>
   </section>
   <section class="forfb container">Free Bet Section</section>
   <section class="forrfb container">Risk-Free bet Section</section>
@@ -173,17 +186,125 @@ $(document).ready(function(){
   <script>
     
     function minV() {
+      
+      var qbbs = document.getElementById("qbbs").value;
+      var qbbo = document.getElementById("qbbo").value;
+      var qbbc = document.getElementById("qbbc").value;
+      var qblo = document.getElementById("qblo").value;
+      var qblc = document.getElementById("qblc").value;
+      var one = 1;
+      var onedone = 1.1;
+      var qbbcp = qbbc / 100;
+      var qblcp = qblc / 100;
+      var qbbobc = qbbo - (qbbo - one) * qbbcp;
+      var qbbobcwqbbs = qbbobc * qbbs;
+      var qblolc = qblo - qblcp;
+      var qbbobcbylolc = qbbobcwqbbs / qblolc;
+      var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var qblb = -qbbs;
+      var qbbe = -(qbbobcbylolc * (qblo - one) );
+      var qble = qbbobcbylolc * (one - qblcp);
+      var qbbbsqbbe = qbbb + qbbe;
+      var qblbsqble = qblb + qble;
+
+      var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+      var oolsf = qbbs * (one + qblcp);
+
+      var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var oube = -(oulsf * (qblo - one));
+      var oulb = -qbbs;
+      var oule = oulsf * (one - qblcp);
+      var oubbsoube = oubb + oube;
+      var oulbsoule = oulb + oule;
+
+      var oubef = oubb;
+      var oubtf = oubbsoube;
+      var oultf = oulbsoule;
+
+
+      var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+      var oobe = -(oolsf * (qblo - one));
+      var oolb = -qbbs;
+      var oole = oolsf * (one - qblcp);
+      var oobbsoobe = oobb + oobe;
+      var oolbsoole = oolb + oole;
+
+      var oobef = oobe;
+      var oobtf = oobbsoobe;
+      var ooltf = oolbsoole;
+
+      var qblaymin = qbbs / (qbbo + one) * qbbo;
+      var qblaymax = qbbs * onedone;
+      
       var minv = document.getElementById("minv").value;
-      document.getElementById("range").min = minv;
+      if(minv > qbbobcbylolc) {
+        var qbbobcbylolcs = qbbobcbylolc - 0.01;
+        document.getElementById("minv").value = qbbobcbylolcs.toFixed(2);
+      } else{
+        document.getElementById("range").min = minv;
+      }
+      //document.getElementById("range").min = minv;
       var maxv = document.getElementById("maxv").value;
       document.getElementById("range").max = maxv;
+      document.getElementById("range").value = qbbobcbylolc;
     }
     
     function maxV() {
+      
+      var qbbs = document.getElementById("qbbs").value;
+      var qbbo = document.getElementById("qbbo").value;
+      var qbbc = document.getElementById("qbbc").value;
+      var qblo = document.getElementById("qblo").value;
+      var qblc = document.getElementById("qblc").value;
+      var one = 1;
+      var onedone = 1.1;
+      var qbbcp = qbbc / 100;
+      var qblcp = qblc / 100;
+      var qbbobc = qbbo - (qbbo - one) * qbbcp;
+      var qbbobcwqbbs = qbbobc * qbbs;
+      var qblolc = qblo - qblcp;
+      var qbbobcbylolc = qbbobcwqbbs / qblolc;
+      var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var qblb = -qbbs;
+      var qbbe = -(qbbobcbylolc * (qblo - one) );
+      var qble = qbbobcbylolc * (one - qblcp);
+      var qbbbsqbbe = qbbb + qbbe;
+      var qblbsqble = qblb + qble;
+
+      var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+      var oolsf = qbbs * (one + qblcp);
+
+      var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+      var oube = -(oulsf * (qblo - one));
+      var oulb = -qbbs;
+      var oule = oulsf * (one - qblcp);
+      var oubbsoube = oubb + oube;
+      var oulbsoule = oulb + oule;
+
+      var oubef = oubb;
+      var oubtf = oubbsoube;
+      var oultf = oulbsoule;
+
+
+      var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+      var oobe = -(oolsf * (qblo - one));
+      var oolb = -qbbs;
+      var oole = oolsf * (one - qblcp);
+      var oobbsoobe = oobb + oobe;
+      var oolbsoole = oolb + oole;
+
+      var oobef = oobe;
+      var oobtf = oobbsoobe;
+      var ooltf = oolbsoole;
+
+      var qblaymin = qbbs / (qbbo + one) * qbbo;
+      var qblaymax = qbbs * onedone;
+      
       var maxv = document.getElementById("maxv").value;
       document.getElementById("range").max = maxv;
       var minv = document.getElementById("minv").value;
       document.getElementById("range").min = minv;
+      document.getElementById("range").value = qbbobcbylolc;
     }
     
     function trigUnderlay() {
@@ -238,6 +359,7 @@ $(document).ready(function(){
       
       var add = parseFloat(qbbs)+parseFloat(qbbo);
       document.getElementById("qb-ls").innerHTML = oulsf.toFixed(2);
+      document.getElementById("range").value = oulsf;
       document.getElementById("qb-back-win").innerHTML = oubb.toFixed(2);
       document.getElementById("qb-lay-win").innerHTML = oulb.toFixed(2);
       document.getElementById("qb-back-ex").innerHTML = oube.toFixed(2);
@@ -252,6 +374,10 @@ $(document).ready(function(){
       //$('.qb-lay-ex').text(qble.toFixed(2));
       //$('.qb-back-total').text(qbbbsqbbe.toFixed(2));
       //$('.qb-lay-total').text(qblbsqble.toFixed(2));
+    }
+    
+    function qbSlider(qbval) {
+      document.getElementById("qb-ls").innerHTML = qbval;      
     }
   </script>
 
@@ -329,6 +455,13 @@ $(document).ready(function(){
       
         $('.qblaymin').val(qblaymin.toFixed(2));
         $('.qblaymax').val(qblaymax.toFixed(2));
+      
+        //$('.range').min(qblaymin.toFixed(2));
+        //$('.range').max(qblaymax.toFixed(2));
+      
+        document.getElementById("range").min = qblaymin;
+        document.getElementById("range").max = qblaymax;
+        document.getElementById("range").value = qbbobcbylolc;
     });
     
   </script>

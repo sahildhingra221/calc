@@ -138,6 +138,7 @@ input[type=number] {
   display: -webkit-box;
   color: white;
   position: relative;
+  margin-top: 15px;
 }
 
 .qb-lay-vals label{
@@ -210,6 +211,30 @@ input {
   font-size: 18px;
   display: inline-block;
   transition: 0.1s ease-in;
+}
+.range{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+.range:hover{
+  background: #E9D3AB !important;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+}
+.range::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
 }
 input:hover{
   //background: #2F474A;
