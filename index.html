@@ -459,9 +459,13 @@ $(document).ready(function(){
         //$('.range').min(qblaymin.toFixed(2));
         //$('.range').max(qblaymax.toFixed(2));
       
-        //document.getElementById("range").min = qblaymin;
-        //document.getElementById("range").max = qblaymax;
-        //document.getElementById("range").value = qbbobcbylolc;
+        var qbstvala = qblaymax - qblaymin;
+        var qbstvalb = (50 / 100) * qbstvala;
+        var qbstvalf = qblaymin + qbstvalb;
+      
+        document.getElementById("range").min = qblaymin;
+        document.getElementById("range").max = qblaymax;
+        document.getElementById("range").value = qbstvalf;
     });
     
   </script>
