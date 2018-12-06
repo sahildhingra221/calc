@@ -20,8 +20,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-
-  <section class="bet-selection">
+  <section class="bet-selection"> 
     <div class="bet-selection-wrapper">
       <h1 class="bet-selection-title">
         Select bet type
@@ -94,7 +93,7 @@ $(document).ready(function(){
           </div>
         </div>
         <div class="qb-lay-slider">
-          <input class="range" type="range" id="range" class="qbslider" id="qbRange" step="0.01" value="50%" style="width: 100%;">
+          <input class="range" type="range" id="range" class="qbslider" id="qbRange" oninput="qbSlider(this.value,'qbbs','qbbo','qbbc','qblo','qblc')" step="0.01" value="50%" style="width: 100%;">
         </div>
         <div class="qb-lay-vals">
           <div class="qb-lay-vals1">
@@ -102,7 +101,7 @@ $(document).ready(function(){
             <input type="text" class="qblaymin" id="minv" value="0" onkeyup="minV()">
           </div>
           <div class="qb-lay-vals2">
-            &euro; <span class="qb-ls">0.00</span>
+            &euro; <span class="qbls">0.00</span>
           </div>
           <div class="qb-lay-vals3">
             <label>Max &euro;</label>
@@ -115,7 +114,7 @@ $(document).ready(function(){
     <!-- Lay stake required Section -->
     <div class="qb-laystake">
       <h3 class="qb-laystake-title">
-          Lay stake required: &euro; <span class="qb-ls" id="qb-ls">0.00</span>
+          Lay stake required: &euro; <span class="qbls" id="qbls">0.00</span> 
       </h3>
     </div>
     
@@ -130,15 +129,15 @@ $(document).ready(function(){
         </div>
         <div class="result-row result-row2">
           <div class="result-row-col1 result-row2-col1 result-row-col">If <b>back</b> (bookie) bet wins</div>
-          <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win" id="qb-back-win">0.00</span></div>
-          <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex" id="qb-back-ex">0.00</span></div>
-          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total" id="qb-back-total">0.00</span></b></div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-back-win" id="qbbackwin">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-back-ex" id="qbbackex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-back-total" id="qbbacktotal">0.00</span></b></div>
         </div>
         <div class="result-row result-row3">
           <div class="result-row-col1 result-row3-col1 result-row-col">If <b>lay</b> (exchange) bet wins</div>
-          <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win" id="qb-lay-win">0.00</span></div>
-          <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex" id="qb-lay-ex">0.00</span></div>
-          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total" id="qb-lay-total">0.00</span></b></div>
+          <div class="result-row-col2 result-row-col">&euro; <span class="qb-lay-win" id="qblaywin">0.00</span></div>
+          <div class="result-row-col3 result-row-col">&euro; <span class="qb-lay-ex" id="qblayex">0.00</span></div>
+          <div class="result-row-col4 result-row-col"><b>= &euro; <span class="qb-lay-total" id="qblaytotal">0.00</span></b></div>
         </div>
       </div>
     </div>
@@ -168,14 +167,72 @@ $(document).ready(function(){
     </div>
 
     <script>
-    var qbslider = document.getElementById("range");
-    var qbso = document.getElementById("qb-ls");
-
-    qbslider.oninput = function() {
-      qbso.innerHTML = qbslider.value;
-      qbso.innerHTML = parseFloat(this.value).toFixed(2);
       
-    }
+      function qbSlider(qbsliderval,qbbs,qbbo,qbbc,qblo,qblc) {
+        
+        var qbslidervalue = parseFloat(qbsliderval).toFixed(2); 
+        document.getElementById('qbls').innerHTML = qbslidervalue;
+        
+        var qbbs = document.getElementById("qbbs").value;
+        var qbbo = document.getElementById("qbbo").value;
+        var qbbc = document.getElementById("qbbc").value;
+        var qblo = document.getElementById("qblo").value;
+        var qblc = document.getElementById("qblc").value;
+        
+        var one = 1;
+        var onedone = 1.1;
+        var qbbcp = qbbc / 100;
+        var qblcp = qblc / 100;
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+        var qbbobcwqbbs = qbbobc * qbbs;
+        var qblolc = qblo - qblcp;
+        var qbbobcbylolc = qbslidervalue;
+        var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var qblb = -qbbs;
+        var qbbe = -(qbbobcbylolc * (qblo - one) );
+        var qble = qbbobcbylolc * (one - qblcp);
+        var qbbbsqbbe = qbbb + qbbe;
+        var qblbsqble = qblb + qble;
+      
+        var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+        var oolsf = qbbs * (one + qblcp);
+      
+        var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var oube = -(oulsf * (qblo - one));
+        var oulb = -qbbs;
+        var oule = oulsf * (one - qblcp);
+        var oubbsoube = oubb + oube;
+        var oulbsoule = oulb + oule;
+      
+        var oubef = oubb;
+        var oubtf = oubbsoube;
+        var oultf = oulbsoule;
+      
+      
+        var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+        var oobe = -(oolsf * (qblo - one));
+        var oolb = -qbbs;
+        var oole = oolsf * (one - qblcp);
+        var oobbsoobe = oobb + oobe;
+        var oolbsoole = oolb + oole;
+      
+        var oobef = oobe;
+        var oobtf = oobbsoobe;
+        var ooltf = oolbsoole;
+      
+        var qblaymin = qbbs / (qbbo + one) * qbbo;
+        var qblaymax = qbbs * onedone;
+        
+        qbbackwin.innerHTML = qbbb.toFixed(2);
+        qblaywin.innerHTML = qblb.toFixed(2);
+        qbbackex.innerHTML = qbbe.toFixed(2);
+        qblayex.innerHTML = qble.toFixed(2);
+        qbbacktotal.innerHTML = qbbbsqbbe.toFixed(2);
+        qblaytotal.innerHTML = qblbsqble.toFixed(2);
+        
+        
+      }
+      
     </script>
   </section>
   <section class="forfb container">Free Bet Section</section>
@@ -358,16 +415,16 @@ $(document).ready(function(){
       var qblaymax = qbbs * onedone;
       
       var add = parseFloat(qbbs)+parseFloat(qbbo);
-      document.getElementById("qb-ls").innerHTML = oulsf.toFixed(2);
+      document.getElementById("qbls").innerHTML = oulsf.toFixed(2);
       document.getElementById("range").value = oulsf;
-      document.getElementById("qb-back-win").innerHTML = oubb.toFixed(2);
-      document.getElementById("qb-lay-win").innerHTML = oulb.toFixed(2);
-      document.getElementById("qb-back-ex").innerHTML = oube.toFixed(2);
-      document.getElementById("qb-lay-ex").innerHTML = oule.toFixed(2);
-      document.getElementById("qb-back-total").innerHTML = oubbsoube.toFixed(2);
-      document.getElementById("qb-lay-total").innerHTML = oulbsoule.toFixed(2);
+      document.getElementById("qbbackwin").innerHTML = oubb.toFixed(2);
+      document.getElementById("qblaywin").innerHTML = oulb.toFixed(2);
+      document.getElementById("qbbackex").innerHTML = oube.toFixed(2);
+      document.getElementById("qblayex").innerHTML = oule.toFixed(2);
+      document.getElementById("qbbacktotal").innerHTML = oubbsoube.toFixed(2);
+      document.getElementById("qblaytotal").innerHTML = oulbsoule.toFixed(2);
       
-      //$('.qb-ls').text(qbbobcbylolc.toFixed(2));
+      //$('.qbls').text(qbbobcbylolc.toFixed(2));
       //$('.qb-back-win').text(qbbb.toFixed(2));
       //$('.qb-lay-win').text(qblb.toFixed(2));
       //$('.qb-back-ex').text(qbbe.toFixed(2));
@@ -376,9 +433,55 @@ $(document).ready(function(){
       //$('.qb-lay-total').text(qblbsqble.toFixed(2));
     }
     
-    function qbSlider(qbval) {
-      document.getElementById("qb-ls").innerHTML = qbval;      
+    function trigStandard() {
+      var qbbs = document.getElementById("qbbs").value;
+      var qbbo = document.getElementById("qbbo").value;
+      var qbbc = document.getElementById("qbbc").value;
+      var qblo = document.getElementById("qblo").value;
+      var qblc = document.getElementById("qblc").value;
+      var one = 1;
+        var onedone = 1.1;
+        var qbbcp = qbbc / 100;
+        var qblcp = qblc / 100;
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+        var qbbobcwqbbs = qbbobc * qbbs;
+        var qblolc = qblo - qblcp;
+        var qbbobcbylolc = qbbobcwqbbs / qblolc;
+        var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var qblb = -qbbs;
+        var qbbe = -(qbbobcbylolc * (qblo - one) );
+        var qble = qbbobcbylolc * (one - qblcp);
+        var qbbbsqbbe = qbbb + qbbe;
+        var qblbsqble = qblb + qble;
+      
+        var qblaymin = document.getElementById("minv").innerHTML;
+        var qblaymax = document.getElementById("maxv").innerHTML;
+      
+        
+      
+        $('.qbls').text(qbbobcbylolc.toFixed(2));
+        $('.qb-back-win').text(qbbb.toFixed(2));
+        $('.qb-lay-win').text(qblb.toFixed(2));
+        $('.qb-back-ex').text(qbbe.toFixed(2));
+        $('.qb-lay-ex').text(qble.toFixed(2));
+        $('.qb-back-total').text(qbbbsqbbe.toFixed(2));
+        $('.qb-lay-total').text(qblbsqble.toFixed(2));
+      
+        $('.qblaymin').val(qblaymin.toFixed(2));
+        $('.qblaymax').val(qblaymax.toFixed(2));
+      
+        //$('.range').min(qblaymin.toFixed(2));
+        //$('.range').max(qblaymax.toFixed(2));
+      
+        var qbstvala = qblaymax - qblaymin;
+        var qbstvalb = (50 / 100) * qbstvala;
+        var qbstvalf = qblaymin + qbstvalb;
+      
+        //document.getElementById("range").min = qblaymin;
+        //document.getElementById("range").max = qblaymax;
+        document.getElementById("range").value = qbstvalf;
     }
+    
   </script>
 
   <script>
@@ -435,7 +538,7 @@ $(document).ready(function(){
       
         
       
-        $('.qb-ls').text(qbbobcbylolc.toFixed(2));
+        $('.qbls').text(qbbobcbylolc.toFixed(2));
         $('.qb-back-win').text(qbbb.toFixed(2));
         $('.qb-lay-win').text(qblb.toFixed(2));
         $('.qb-back-ex').text(qbbe.toFixed(2));
