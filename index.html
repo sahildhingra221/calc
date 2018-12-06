@@ -428,62 +428,111 @@ $(document).ready(function(){
       var onedone = 1.1;
       var qbbcp = qbbc / 100;
       var qblcp = qblc / 100;
-      var qbbobc = qbbo - (qbbo - one) * qbbcp;
-      var qbbobcwqbbs = qbbobc * qbbs;
-      var qblolc = qblo - qblcp;
-      var qbbobcbylolc = qbbobcwqbbs / qblolc;
-      var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
-      var qblb = -qbbs;
-      var qbbe = -(qbbobcbylolc * (qblo - one) );
-      var qble = qbbobcbylolc * (one - qblcp);
-      var qbbbsqbbe = qbbb + qbbe;
-      var qblbsqble = qblb + qble;
+      if (qbbo <= qblo) {
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+        var qbbobcwqbbs = qbbobc * qbbs;
+        var qblolc = qblo - qblcp;
+        var qbbobcbylolc = qbbobcwqbbs / qblolc;
+        var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var qblb = -qbbs;
+        var qbbe = -(qbbobcbylolc * (qblo - one) );
+        var qble = qbbobcbylolc * (one - qblcp);
+        var qbbbsqbbe = qbbb + qbbe;
+        var qblbsqble = qblb + qble;
 
-      var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
-      var oolsf = qbbs * (one + qblcp);
+        var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+        var oolsf = qbbs * (one + qblcp);
 
-      var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
-      var oube = -(oulsf * (qblo - one));
-      var oulb = -qbbs;
-      var oule = oulsf * (one - qblcp);
-      var oubbsoube = oubb + oube;
-      var oulbsoule = oulb + oule;
+        var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+        var oube = -(oulsf * (qblo - one));
+        var oulb = -qbbs;
+        var oule = oulsf * (one - qblcp);
+        var oubbsoube = oubb + oube;
+        var oulbsoule = oulb + oule;
 
-      var oubef = oubb;
-      var oubtf = oubbsoube;
-      var oultf = oulbsoule;
+        var oubef = oubb;
+        var oubtf = oubbsoube;
+        var oultf = oulbsoule;
 
 
-      var oobb = qbbs * (qbbo - one) * (one - qbbcp);
-      var oobe = -(oolsf * (qblo - one));
-      var oolb = -qbbs;
-      var oole = oolsf * (one - qblcp);
-      var oobbsoobe = oobb + oobe;
-      var oolbsoole = oolb + oole;
+        var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+        var oobe = -(oolsf * (qblo - one));
+        var oolb = -qbbs;
+        var oole = oolsf * (one - qblcp);
+        var oobbsoobe = oobb + oobe;
+        var oolbsoole = oolb + oole;
 
-      var oobef = oobe;
-      var oobtf = oobbsoobe;
-      var ooltf = oolbsoole;
+        var oobef = oobe;
+        var oobtf = oobbsoobe;
+        var ooltf = oolbsoole;
 
-      var qblaymin = qbbs / (qbbo + one) * qbbo;
-      var qblaymax = qbbs * onedone;
-      
-      document.getElementById("qbls").innerHTML = oulsf.toFixed(2);
-      document.getElementById("range").value = oulsf;
-      document.getElementById("qbbackwin").innerHTML = oubb.toFixed(2);
-      document.getElementById("qblaywin").innerHTML = oulb.toFixed(2);
-      document.getElementById("qbbackex").innerHTML = oube.toFixed(2);
-      document.getElementById("qblayex").innerHTML = oule.toFixed(2);
-      document.getElementById("qbbacktotal").innerHTML = oubbsoube.toFixed(2);
-      document.getElementById("qblaytotal").innerHTML = oulbsoule.toFixed(2);
-      
-      //$('.qbls').text(qbbobcbylolc.toFixed(2));
-      //$('.qb-back-win').text(qbbb.toFixed(2));
-      //$('.qb-lay-win').text(qblb.toFixed(2));
-      //$('.qb-back-ex').text(qbbe.toFixed(2));
-      //$('.qb-lay-ex').text(qble.toFixed(2));
-      //$('.qb-back-total').text(qbbbsqbbe.toFixed(2));
-      //$('.qb-lay-total').text(qblbsqble.toFixed(2));
+        var qblaymin = oulsf - 2;
+        var qblaymax = oolsf + 1;
+
+        document.getElementById("qbls").innerHTML = oulsf.toFixed(2);
+        document.getElementById("range").value = oulsf;
+        document.getElementById("qbbackwin").innerHTML = oubb.toFixed(2);
+        document.getElementById("qblaywin").innerHTML = oulb.toFixed(2);
+        document.getElementById("qbbackex").innerHTML = oube.toFixed(2);
+        document.getElementById("qblayex").innerHTML = oule.toFixed(2);
+        document.getElementById("qbbacktotal").innerHTML = oubbsoube.toFixed(2);
+        document.getElementById("qblaytotal").innerHTML = oulbsoule.toFixed(2);
+      } else if (qbbo > qblo) {
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+            var qbbobcwqbbs = qbbobc * qbbs;
+            var qblolc = qblo - qblcp;
+            var qbbobcbylolc = qbbobcwqbbs / qblolc;
+            var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var qblb = -qbbs;
+            var qbbe = -(qbbobcbylolc * (qblo - one) );
+            var qble = qbbobcbylolc * (one - qblcp);
+            var qbbbsqbbe = qbbb + qbbe;
+            var qblbsqble = qblb + qble;
+
+            var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+            var oolsf = qbbs * (one + qblcp);
+
+            var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var oube = -(oulsf * (qblo - one));
+            var oulb = -qbbs;
+            var oule = oulsf * (one - qblcp);
+            var oubbsoube = oubb + oube;
+            var oulbsoule = oulb + oule;
+
+            var oubef = oubb;
+            var oubtf = oubbsoube;
+            var oultf = oulbsoule;
+
+
+            var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+            var oobe = -(oolsf * (qblo - one));
+            var oolb = -qbbs;
+            var oole = oolsf * (one - qblcp);
+            var oobbsoobe = oobb + oobe;
+            var oolbsoole = oolb + oole;
+
+            var oobef = oobe;
+            var oobtf = oobbsoobe;
+            var ooltf = oolbsoole;
+
+            //var qblaymin = qbbs / (qbbo + one) * qbbo;
+            //var qblaymax = qbbs * onedone;
+          
+            var qblaymin = oolsf + 1;
+            var qblaymax = oulsf - 2;
+
+            document.getElementById("qbls").innerHTML = oolsf.toFixed(2);
+            document.getElementById("range").value = oolsf;
+            document.getElementById("qbbackwin").innerHTML = oobb.toFixed(2);
+            document.getElementById("qblaywin").innerHTML = oolb.toFixed(2);
+            document.getElementById("qbbackex").innerHTML = oobe.toFixed(2);
+            document.getElementById("qblayex").innerHTML = oole.toFixed(2);
+            document.getElementById("qbbacktotal").innerHTML = oobbsoube.toFixed(2);
+            document.getElementById("qblaytotal").innerHTML = oolbsoule.toFixed(2);
+        
+      } else {
+        document.getElementById("qbls").innerHTML = (0.00).toFixed(2);
+      }
     }
     
     function trigOverlay() {
@@ -496,6 +545,7 @@ $(document).ready(function(){
       var onedone = 1.1;
       var qbbcp = qbbc / 100;
       var qblcp = qblc / 100;
+      if (qbbo <= qblo) {
       var qbbobc = qbbo - (qbbo - one) * qbbcp;
       var qbbobcwqbbs = qbbobc * qbbs;
       var qblolc = qblo - qblcp;
@@ -544,14 +594,62 @@ $(document).ready(function(){
       document.getElementById("qblayex").innerHTML = oole.toFixed(2);
       document.getElementById("qbbacktotal").innerHTML = oobbsoobe.toFixed(2);
       document.getElementById("qblaytotal").innerHTML = oolbsoole.toFixed(2);
-      
-      //$('.qbls').text(qbbobcbylolc.toFixed(2));
-      //$('.qb-back-win').text(qbbb.toFixed(2));
-      //$('.qb-lay-win').text(qblb.toFixed(2));
-      //$('.qb-back-ex').text(qbbe.toFixed(2));
-      //$('.qb-lay-ex').text(qble.toFixed(2));
-      //$('.qb-back-total').text(qbbbsqbbe.toFixed(2));
-      //$('.qb-lay-total').text(qblbsqble.toFixed(2));
+      }  else if (qbbo > qblo) {
+        var qbbobc = qbbo - (qbbo - one) * qbbcp;
+            var qbbobcwqbbs = qbbobc * qbbs;
+            var qblolc = qblo - qblcp;
+            var qbbobcbylolc = qbbobcwqbbs / qblolc;
+            var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var qblb = -qbbs;
+            var qbbe = -(qbbobcbylolc * (qblo - one) );
+            var qble = qbbobcbylolc * (one - qblcp);
+            var qbbbsqbbe = qbbb + qbbe;
+            var qblbsqble = qblb + qble;
+
+            var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+            var oolsf = qbbs * (one + qblcp);
+
+            var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var oube = -(oulsf * (qblo - one));
+            var oulb = -qbbs;
+            var oule = oulsf * (one - qblcp);
+            var oubbsoube = oubb + oube;
+            var oulbsoule = oulb + oule;
+
+            var oubef = oubb;
+            var oubtf = oubbsoube;
+            var oultf = oulbsoule;
+
+
+            var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+            var oobe = -(oolsf * (qblo - one));
+            var oolb = -qbbs;
+            var oole = oolsf * (one - qblcp);
+            var oobbsoobe = oobb + oobe;
+            var oolbsoole = oolb + oole;
+
+            var oobef = oobe;
+            var oobtf = oobbsoobe;
+            var ooltf = oolbsoole;
+
+            //var qblaymin = qbbs / (qbbo + one) * qbbo;
+            //var qblaymax = qbbs * onedone;
+          
+            var qblaymin = oolsf + 1;
+            var qblaymax = oulsf - 2;
+
+            document.getElementById("qbls").innerHTML = oulsf.toFixed(2);
+            document.getElementById("range").value = oulsf;
+            document.getElementById("qbbackwin").innerHTML = oubb.toFixed(2);
+            document.getElementById("qblaywin").innerHTML = oulb.toFixed(2);
+            document.getElementById("qbbackex").innerHTML = oube.toFixed(2);
+            document.getElementById("qblayex").innerHTML = oule.toFixed(2);
+            document.getElementById("qbbacktotal").innerHTML = oubbsoube.toFixed(2);
+            document.getElementById("qblaytotal").innerHTML = oulbsoule.toFixed(2);
+        
+      } else{
+        document.getElementById("qbls").innerHTML = (0.00).toFixed(2);
+      }
     }
     
   </script>
@@ -614,79 +712,163 @@ $(document).ready(function(){
         var onedone = 1.1;
         var qbbcp = qbbc / 100;
         var qblcp = qblc / 100;
-        var qbbobc = qbbo - (qbbo - one) * qbbcp;
-        var qbbobcwqbbs = qbbobc * qbbs;
-        var qblolc = qblo - qblcp;
-        var qbbobcbylolc = qbbobcwqbbs / qblolc;
-        var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
-        var qblb = -qbbs;
-        var qbbe = -(qbbobcbylolc * (qblo - one) );
-        var qble = qbbobcbylolc * (one - qblcp);
-        var qbbbsqbbe = qbbb + qbbe;
-        var qblbsqble = qblb + qble;
-      
-        var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
-        var oolsf = qbbs * (one + qblcp);
-      
-        var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
-        var oube = -(oulsf * (qblo - one));
-        var oulb = -qbbs;
-        var oule = oulsf * (one - qblcp);
-        var oubbsoube = oubb + oube;
-        var oulbsoule = oulb + oule;
-      
-        var oubef = oubb;
-        var oubtf = oubbsoube;
-        var oultf = oulbsoule;
-      
-      
-        var oobb = qbbs * (qbbo - one) * (one - qbbcp);
-        var oobe = -(oolsf * (qblo - one));
-        var oolb = -qbbs;
-        var oole = oolsf * (one - qblcp);
-        var oobbsoobe = oobb + oobe;
-        var oolbsoole = oolb + oole;
-      
-        var oobef = oobe;
-        var oobtf = oobbsoobe;
-        var ooltf = oolbsoole;
-      
-        var qblaymin = qbbs / (qbbo + one) * qbbo;
-        var qblaymax = qbbs * onedone;
-      
-        
-      
-        $('.qbls').text(qbbobcbylolc.toFixed(2));
-        $('.qb-back-win').text(qbbb.toFixed(2));
-        $('.qb-lay-win').text(qblb.toFixed(2));
-        $('.qb-back-ex').text(qbbe.toFixed(2));
-        $('.qb-lay-ex').text(qble.toFixed(2));
-        $('.qb-back-total').text(qbbbsqbbe.toFixed(2));
-        $('.qb-lay-total').text(qblbsqble.toFixed(2));
-      
-        $('.ouls').text(oulsf.toFixed(2));
-        $('.oube').text(oubef.toFixed(2));
-        $('.oubt').text(oubtf.toFixed(2));
-        $('.oult').text(oultf.toFixed(2));
-      
-        $('.ools').text(oolsf.toFixed(2));
-        $('.oobe').text(oobef.toFixed(2));
-        $('.oobt').text(oobtf.toFixed(2));
-        $('.oolt').text(ooltf.toFixed(2));
-      
-        $('.qblaymin').val(qblaymin.toFixed(2));
-        $('.qblaymax').val(qblaymax.toFixed(2));
-      
-        //$('.range').min(qblaymin.toFixed(2));
-        //$('.range').max(qblaymax.toFixed(2));
-      
-        var qbstvala = qblaymax - qblaymin;
-        var qbstvalb = (50 / 100) * qbstvala;
-        var qbstvalf = qblaymin + qbstvalb;
-      
-        document.getElementById("range").min = qblaymin;
-        document.getElementById("range").max = qblaymax;
-        document.getElementById("range").value = qbstvalf;
+        if (qbbo <= qblo) {
+          var qbbobc = qbbo - (qbbo - one) * qbbcp;
+          var qbbobcwqbbs = qbbobc * qbbs;
+          var qblolc = qblo - qblcp;
+          var qbbobcbylolc = qbbobcwqbbs / qblolc;
+          var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+          var qblb = -qbbs;
+          var qbbe = -(qbbobcbylolc * (qblo - one) );
+          var qble = qbbobcbylolc * (one - qblcp);
+          var qbbbsqbbe = qbbb + qbbe;
+          var qblbsqble = qblb + qble;
+
+          var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+          var oolsf = qbbs * (one + qblcp);
+
+          var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+          var oube = -(oulsf * (qblo - one));
+          var oulb = -qbbs;
+          var oule = oulsf * (one - qblcp);
+          var oubbsoube = oubb + oube;
+          var oulbsoule = oulb + oule;
+
+          var oubef = oubb;
+          var oubtf = oubbsoube;
+          var oultf = oulbsoule;
+
+
+          var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+          var oobe = -(oolsf * (qblo - one));
+          var oolb = -qbbs;
+          var oole = oolsf * (one - qblcp);
+          var oobbsoobe = oobb + oobe;
+          var oolbsoole = oolb + oole;
+
+          var oobef = oobe;
+          var oobtf = oobbsoobe;
+          var ooltf = oolbsoole;
+
+          //var qblaymin = qbbs / (qbbo + one) * qbbo;
+          //var qblaymax = qbbs * onedone;
+
+          var qblaymin = oulsf - 2;
+          var qblaymax = oolsf + 1;
+
+
+
+          $('.qbls').text(qbbobcbylolc.toFixed(2));
+          $('.qb-back-win').text(qbbb.toFixed(2));
+          $('.qb-lay-win').text(qblb.toFixed(2));
+          $('.qb-back-ex').text(qbbe.toFixed(2));
+          $('.qb-lay-ex').text(qble.toFixed(2));
+          $('.qb-back-total').text(qbbbsqbbe.toFixed(2));
+          $('.qb-lay-total').text(qblbsqble.toFixed(2));
+
+          $('.ouls').text(oulsf.toFixed(2));
+          $('.oube').text(oubef.toFixed(2));
+          $('.oubt').text(oubtf.toFixed(2));
+          $('.oult').text(oultf.toFixed(2));
+
+          $('.ools').text(oolsf.toFixed(2));
+          $('.oobe').text(oobef.toFixed(2));
+          $('.oobt').text(oobtf.toFixed(2));
+          $('.oolt').text(ooltf.toFixed(2));
+
+          $('.qblaymin').val(qblaymin.toFixed(2));
+          $('.qblaymax').val(qblaymax.toFixed(2));
+
+          //$('.range').min(qblaymin.toFixed(2));
+          //$('.range').max(qblaymax.toFixed(2));
+
+          var qbstvala = qblaymax - qblaymin;
+          var qbstvalb = (50 / 100) * qbstvala;
+          var qbstvalf = qblaymin + qbstvalb;
+
+          document.getElementById("range").min = qblaymin;
+          document.getElementById("range").max = qblaymax;
+          document.getElementById("range").value = qbstvalf;
+        } else if(qbbo > qblo){
+            var qbbobc = qbbo - (qbbo - one) * qbbcp;
+            var qbbobcwqbbs = qbbobc * qbbs;
+            var qblolc = qblo - qblcp;
+            var qbbobcbylolc = qbbobcwqbbs / qblolc;
+            var qbbb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var qblb = -qbbs;
+            var qbbe = -(qbbobcbylolc * (qblo - one) );
+            var qble = qbbobcbylolc * (one - qblcp);
+            var qbbbsqbbe = qbbb + qbbe;
+            var qblbsqble = qblb + qble;
+
+            var oulsf = (qbbs * (qbbo - (qbbo - one) * qbbcp - one)) / (qblo - one);
+            var oolsf = qbbs * (one + qblcp);
+
+            var oubb = (qbbs * qbbo - qbbs) * (one - qbbcp);
+            var oube = -(oulsf * (qblo - one));
+            var oulb = -qbbs;
+            var oule = oulsf * (one - qblcp);
+            var oubbsoube = oubb + oube;
+            var oulbsoule = oulb + oule;
+
+            var oubef = oubb;
+            var oubtf = oubbsoube;
+            var oultf = oulbsoule;
+
+
+            var oobb = qbbs * (qbbo - one) * (one - qbbcp);
+            var oobe = -(oolsf * (qblo - one));
+            var oolb = -qbbs;
+            var oole = oolsf * (one - qblcp);
+            var oobbsoobe = oobb + oobe;
+            var oolbsoole = oolb + oole;
+
+            var oobef = oobe;
+            var oobtf = oobbsoobe;
+            var ooltf = oolbsoole;
+
+            //var qblaymin = qbbs / (qbbo + one) * qbbo;
+            //var qblaymax = qbbs * onedone;
+          
+            var qblaymin = oolsf + 1;
+            var qblaymax = oulsf - 2;
+
+
+
+            $('.qbls').text(qbbobcbylolc.toFixed(2));
+            $('.qb-back-win').text(qbbb.toFixed(2));
+            $('.qb-lay-win').text(qblb.toFixed(2));
+            $('.qb-back-ex').text(qbbe.toFixed(2));
+            $('.qb-lay-ex').text(qble.toFixed(2));
+            $('.qb-back-total').text(qbbbsqbbe.toFixed(2));
+            $('.qb-lay-total').text(qblbsqble.toFixed(2));
+
+            $('.ouls').text(oolsf.toFixed(2));
+            $('.oube').text(oobef.toFixed(2));
+            $('.oubt').text(oobtf.toFixed(2));
+            $('.oult').text(ooltf.toFixed(2));
+
+            $('.ools').text(oulsf.toFixed(2));
+            $('.oobe').text(oubef.toFixed(2));
+            $('.oobt').text(oubtf.toFixed(2));
+            $('.oolt').text(oultf.toFixed(2));
+
+            $('.qblaymin').val(qblaymin.toFixed(2));
+            $('.qblaymax').val(qblaymax.toFixed(2));
+
+            //$('.range').min(qblaymin.toFixed(2));
+            //$('.range').max(qblaymax.toFixed(2));
+
+            var qbstvala = qblaymax - qblaymin;
+            var qbstvalb = (50 / 100) * qbstvala;
+            var qbstvalf = qblaymin + qbstvalb;
+
+            document.getElementById("range").min = qblaymin;
+            document.getElementById("range").max = qblaymax;
+            document.getElementById("range").value = qbstvalf;
+        } else {
+          $('.qbls').text(("0.00").toFixed(2));
+        }
     });
     
   </script>
