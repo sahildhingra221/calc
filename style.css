@@ -138,7 +138,7 @@ input[type=number] {
   display: -webkit-box;
   color: white;
   position: relative;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .qb-lay-vals label{
@@ -357,6 +357,23 @@ input[type="number"]{
   border-left-color: #cc668a;
   border-width: 26px;
   margin-top: -26px;
+}
+
+/* Margins */
+.qb-lay-marginal-section {
+  display: -webkit-box;
+  width: 100%;
+  margin-top: 10px;
+}
+.line{
+  height: 7.5px;
+  width: 1px;
+  margin-right: 1.945%;
+  background-color: white;
+}
+.l1, .l25, .l49{
+  height: 20px;
+  width: 2px;
 }
 
 /* Optimal Under/Over Lay Section */
