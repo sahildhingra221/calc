@@ -21,7 +21,7 @@ $(document).ready(function(){
 </head>
 <body> 
   <div class="ver-info">
-    <span>Ver: 0.1.0</span>
+    <span>Ver: 0.1.1</span>
   </div>
   <section class="bet-selection">
     <div class="bet-selection-wrapper">
@@ -477,6 +477,8 @@ $(document).ready(function(){
 
         document.getElementById("qbls").innerHTML = oulsf.toFixed(2);
         document.getElementById("range").value = oulsf;
+        document.getElementById("range").min = qblaymin.toFixed(2);
+        document.getElementById("range").max = qblaymax.toFixed(2);
         document.getElementById("qbbackwin").innerHTML = oubb.toFixed(2);
         document.getElementById("qblaywin").innerHTML = oulb.toFixed(2);
         document.getElementById("qbbackex").innerHTML = oube.toFixed(2);
@@ -655,6 +657,8 @@ $(document).ready(function(){
       $('.qblaymax').val(qblaymax.toFixed(2));
         
       document.getElementById("qbls").innerHTML = oolsf.toFixed(2);
+          document.getElementById("range").min = qblaymin.toFixed(2);
+          document.getElementById("range").max = qblaymax.toFixed(2);
       document.getElementById("range").value = oolsf;
       document.getElementById("qbbackwin").innerHTML = oobb.toFixed(2);
       document.getElementById("qblaywin").innerHTML = oolb.toFixed(2);
@@ -708,6 +712,8 @@ $(document).ready(function(){
         
       document.getElementById("qbls").innerHTML = oolsf.toFixed(2);
       document.getElementById("range").value = oolsf;
+          document.getElementById("range").min = qblaymin.toFixed(2);
+          document.getElementById("range").max = qblaymax.toFixed(2);
       document.getElementById("qbbackwin").innerHTML = oobb.toFixed(2);
       document.getElementById("qblaywin").innerHTML = oolb.toFixed(2);
       document.getElementById("qbbackex").innerHTML = oobe.toFixed(2);
