@@ -105,15 +105,22 @@ function cbUnderlay() {
 
   //Range Slider
 
-  var cbslidermid = (cbolsr - cblsr) + (35 / 100);
   if((cblsr - cbulsr) > (cblsr - cbolsr)) {
     var cbslidermid = (cblsr - cbulsr) + (23 / 100);
     var cbslidermin = cblsr - cbslidermid; 
     var cbslidermax = cblsr + cbslidermid; 
   } else {
-      var cbslidermid = (cbolsr - cblsr) + (23 / 100);
+      var cbslidermid = (cbolsr - cblsr) - (23 / 100);
       var cbslidermin = cblsr - cbslidermid; 
       var cbslidermax = cblsr + cbslidermid; 
+      if(cbslidermin > cbslidermax) {
+        var tmp;
+        tmp = cbslidermin;
+        cbslidermin = cbslidermax;
+        cbslidermax = tmp;
+        $(".cbmin").val(cbslidermin.toFixed(2));
+        $(".cbmax").val(cbslidermax.toFixed(2));
+      }
   }
 
   $(".cbmin").val(cbslidermin.toFixed(2));

@@ -79,9 +79,17 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
       var cbslidermin = cblsr - cbslidermid; 
       var cbslidermax = cblsr + cbslidermid; 
     } else {
-        var cbslidermid = (cbolsr - cblsr) + (23 / 100);
+        var cbslidermid = (cbolsr - cblsr) - (23 / 100);
         var cbslidermin = cblsr - cbslidermid; 
         var cbslidermax = cblsr + cbslidermid; 
+        if(cbslidermin > cbslidermax) {
+          var tmp;
+          tmp = cbslidermin;
+          cbslidermin = cbslidermax;
+          cbslidermax = tmp;
+          $(".cbmin").val(cbslidermin.toFixed(2));
+          $(".cbmax").val(cbslidermax.toFixed(2));
+        }
     }
     
     //Conditions NaN && Infinity
@@ -140,6 +148,8 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
     document.getElementById("cbslider").min = cbslidermin;
     document.getElementById("cbslider").max = cbslidermax;
     document.getElementById("cbslider").value = cblsr;
+  } else {
+      document.getElementById("cblsr").innerHTML = parseFloat("0.00").toFixed(2);
   }
   
 });
