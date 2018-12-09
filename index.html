@@ -7,68 +7,75 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400">
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="js/fb.js"></script>
+  <script src="js/cb.js"></script>
 </head>
 <body> 
   <div class="ver-info">
     <span>Ver: 0.1.0</span>
   </div>
   
-  <!-- Free Bet -->
+  <!-- Qualifying Bet -->
   <span>Back Stake: </span>
-  <input type="text" name="fbbs" id="fbbs" class="fbbs"><br>
+  <input type="text" name="cbbs" id="cbbs" class="cbbs">
+  <span>Cash Back: </span>
+  <input type="text" name="cbcs" id="cbcs" class="cbcs">
+  <br>
   <span>Back Odds: </span>
-  <input type="text" name="fbbo" id="fbbo" class="fbbo">
+  <input type="text" name="cbbo" id="cbbo" class="cbbo">
   <span>Back Commision: </span>
-  <input type="text" name="fbbc" id="fbbc" class="fbbc"><br>
+  <input type="text" name="cbbc" id="cbbc" class="cbbc"><br>
   
   <span>Lay Odds: </span>
-  <input type="text" name="fblo" id="fblo" class="fblo">
+  <input type="text" name="cblo" id="cblo" class="cblo">
   <span>Lay Commision: </span>
-  <input type="text" name="fblc" id="fblc" class="fblc"><br>
+  <input type="text" name="cblc" id="cblc" class="cblc"><br>
   
-  <button name="fbunderlay" id="fbunderlay" class="fbunderlay" onclick="fbUnderlay()">UNDERLAY</button>
-  <button name="fbstandard" id="fbstandard" class="fbstandard" onclick="fbStandard()">STANDARD</button>
-  <button name="fboverlay" id="fboverlay" class="fboverlay" onclick="fbOverlay()">OVERLAY</button><br>
+  <button name="cbunderlay" id="cbunderlay" class="cbunderlay" onclick="cbUnderlay()">UNDERLAY</button>
+  <button name="cbstandard" id="cbstandard" class="cbstandard" onclick="cbStandard()">STANDARD</button>
+  <button name="cboverlay" id="cboverlay" class="cboverlay" onclick="cbOverlay()">OVERLAY</button><br>
   
-  <input type="range" name="fbslider" id="fbslider" class="fbslider" step="0.01" oninput="fbSlider(this.value,'fbbs','fbbo','fbbc','fblo','fblc')" style="width: 560px"><br>
+  <!--input type="range" name="cbslider" id="cbslider" class="cbslider" step="0.01" oninput="cbSlider(this.value,'cbbs','cbcs',cbbo','cbbc','cblo','cblc')" style="width: 560px"><br-->
+  <input type="range" name="cbslider" id="cbslider" class="cbslider" step="0.01" oninput="cbSlider(this.value,'cbbs','cbcs','cbbo','cbbc','cblo','cblc')" style="width: 560px"><br>
   
   <span>Min: </span>
-  <input type="text" name="fbmin" id="fbmin" class="fbmin" onkeyup="fbMin()">
-  <span id="fbstandardvalfix" class="fbstandardvalfix">0.00</span>
+  <input type="text" name="cbmin" id="cbmin" class="cbmin" onkeyup="cbMin()">
+  <span id="cbstandardvalfix" class="cbstandardvalfix">0.00</span>
   <span>Max: </span>
-  <input type="text" name="fbmax" id="fbmax" class="fbmax" onkeyup="fbMax()"><br>
+  <input type="text" name="cbmax" id="cbmax" class="cbmax" onkeyup="cbMax()"><br>
   
-  <span id="fblsr" class="fblsr">0.00</span><br><br>
+  <span id="cblsr" class="cblsr">0.00</span><br><br>
   
   <span>Bookie</span>
   <span>Exchange</span>
+  <span>Cashback</span>
   <span>Total</span><br>
-  <span id="fbbb" class="fbbb">0.00</span>
-  <span id="fbbe" class="fbbe">0.00</span>
-  <span id="fbbt" class="fbbt">0.00</span><br>
-  <span id="fblb" class="fblb">0.00</span>
-  <span id="fble" class="fble">0.00</span>
-  <span id="fblt" class="fblt">0.00</span><br><br>
+  <span id="cbbb" class="cbbb">0.00</span>
+  <span id="cbbe" class="cbbe">0.00</span>
+  <span id="cbbcs" class="cbbcs">0.00</span>
+  <span id="cbbt" class="cbbt">0.00</span><br>
+  <span id="cblb" class="cblb">0.00</span>
+  <span id="cble" class="cble">0.00</span>
+  <span id="cblcs" class="cblcs">0.00</span>
+  <span id="cblt" class="cblt">0.00</span><br><br>
   
   <span>Optimal Underlay: </span><br>
-  <span id="fbulsr" class="fbulsr">0.00</span><br>
-  <span id="fbutel" class="fbutel">0.00</span><br>
-  <span id="fbubw" class="fbubw">0.00</span><br>
-  <span id="fbulw" class="fbulw">0.00</span><br><br>
+  <span id="cbulsr" class="cbulsr">0.00</span><br>
+  <span id="cbutel" class="cbutel">0.00</span><br>
+  <span id="cbubw" class="cbubw">0.00</span><br>
+  <span id="cbulw" class="cbulw">0.00</span><br><br>
   
   <span>Optimal Overlay: </span><br>
-  <span id="fbolsr" class="fbolsr">0.00</span><br>
-  <span id="fbotel" class="fbotel">0.00</span><br>
-  <span id="fbobw" class="fbobw">0.00</span><br>
-  <span id="fbolw" class="fbolw">0.00</span>
+  <span id="cbolsr" class="cbolsr">0.00</span><br>
+  <span id="cbotel" class="cbotel">0.00</span><br>
+  <span id="cbobw" class="cbobw">0.00</span><br>
+  <span id="cbolw" class="cbolw">0.00</span>
   
-  <script src="js/fb.js"></script>
-  <script src="js/fbunderlay.js"></script>
-  <script src="js/fboverlay.js"></script>
-  <script src="js/fbstandard.js"></script>
-  <script src="js/fbmin.js"></script>
-  <script src="js/fbmax.js"></script>
-  <script src="js/fbslider.js"></script>
+  <script src="js/cb.js"></script>
+  <script src="js/cbunderlay.js"></script>
+  <script src="js/cboverlay.js"></script>
+  <script src="js/cbstandard.js"></script>
+  <script src="js/cbmin.js"></script>
+  <script src="js/cbmax.js"></script>
+  <script src="js/cbslider.js"></script>
 </body>
 </html>
