@@ -7,68 +7,68 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400">
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="js/qb.js"></script>
+  <script src="js/fb.js"></script>
 </head>
 <body> 
   <div class="ver-info">
-    <span>Ver: 1.1.2</span>
+    <span>Ver: 0.1.0</span>
   </div>
   
-  <!-- Qualifying Bet -->
+  <!-- Free Bet -->
   <span>Back Stake: </span>
-  <input type="text" name="qbbs" id="qbbs" class="qbbs"><br>
+  <input type="text" name="fbbs" id="fbbs" class="fbbs"><br>
   <span>Back Odds: </span>
-  <input type="text" name="qbbo" id="qbbo" class="qbbo">
+  <input type="text" name="fbbo" id="fbbo" class="fbbo">
   <span>Back Commision: </span>
-  <input type="text" name="qbbc" id="qbbc" class="qbbc"><br>
+  <input type="text" name="fbbc" id="fbbc" class="fbbc"><br>
   
   <span>Lay Odds: </span>
-  <input type="text" name="qblo" id="qblo" class="qblo">
+  <input type="text" name="fblo" id="fblo" class="fblo">
   <span>Lay Commision: </span>
-  <input type="text" name="qblc" id="qblc" class="qblc"><br>
+  <input type="text" name="fblc" id="fblc" class="fblc"><br>
   
-  <button name="qbunderlay" id="qbunderlay" class="qbunderlay" onclick="qbUnderlay()">UNDERLAY</button>
-  <button name="qbstandard" id="qbstandard" class="qbstandard" onclick="qbStandard()">STANDARD</button>
-  <button name="qboverlay" id="qboverlay" class="qboverlay" onclick="qbOverlay()">OVERLAY</button><br>
+  <button name="fbunderlay" id="fbunderlay" class="fbunderlay" onclick="fbUnderlay()">UNDERLAY</button>
+  <button name="fbstandard" id="fbstandard" class="fbstandard" onclick="fbStandard()">STANDARD</button>
+  <button name="fboverlay" id="fboverlay" class="fboverlay" onclick="fbOverlay()">OVERLAY</button><br>
   
-  <input type="range" name="qbslider" id="qbslider" class="qbslider" step="0.01" oninput="qbSlider(this.value,'qbbs','qbbo','qbbc','qblo','qblc')" style="width: 560px"><br>
+  <input type="range" name="fbslider" id="fbslider" class="fbslider" step="0.01" oninput="fbSlider(this.value,'fbbs','fbbo','fbbc','fblo','fblc')" style="width: 560px"><br>
   
   <span>Min: </span>
-  <input type="text" name="qbmin" id="qbmin" class="qbmin" onkeyup="qbMin()">
-  <span id="qbstandardvalfix" class="qbstandardvalfix">0.00</span>
+  <input type="text" name="fbmin" id="fbmin" class="fbmin" onkeyup="fbMin()">
+  <span id="fbstandardvalfix" class="fbstandardvalfix">0.00</span>
   <span>Max: </span>
-  <input type="text" name="qbmax" id="qbmax" class="qbmax" onkeyup="qbMax()"><br>
+  <input type="text" name="fbmax" id="fbmax" class="fbmax" onkeyup="fbMax()"><br>
   
-  <span id="qblsr" class="qblsr">0.00</span><br><br>
+  <span id="fblsr" class="fblsr">0.00</span><br><br>
   
   <span>Bookie</span>
   <span>Exchange</span>
   <span>Total</span><br>
-  <span id="qbbb" class="qbbb">0.00</span>
-  <span id="qbbe" class="qbbe">0.00</span>
-  <span id="qbbt" class="qbbt">0.00</span><br>
-  <span id="qblb" class="qblb">0.00</span>
-  <span id="qble" class="qble">0.00</span>
-  <span id="qblt" class="qblt">0.00</span><br><br>
+  <span id="fbbb" class="fbbb">0.00</span>
+  <span id="fbbe" class="fbbe">0.00</span>
+  <span id="fbbt" class="fbbt">0.00</span><br>
+  <span id="fblb" class="fblb">0.00</span>
+  <span id="fble" class="fble">0.00</span>
+  <span id="fblt" class="fblt">0.00</span><br><br>
   
   <span>Optimal Underlay: </span><br>
-  <span id="qbulsr" class="qbulsr">0.00</span><br>
-  <span id="qbutel" class="qbutel">0.00</span><br>
-  <span id="qbubw" class="qbubw">0.00</span><br>
-  <span id="qbulw" class="qbulw">0.00</span><br><br>
+  <span id="fbulsr" class="fbulsr">0.00</span><br>
+  <span id="fbutel" class="fbutel">0.00</span><br>
+  <span id="fbubw" class="fbubw">0.00</span><br>
+  <span id="fbulw" class="fbulw">0.00</span><br><br>
   
   <span>Optimal Overlay: </span><br>
-  <span id="qbolsr" class="qbolsr">0.00</span><br>
-  <span id="qbotel" class="qbotel">0.00</span><br>
-  <span id="qbobw" class="qbobw">0.00</span><br>
-  <span id="qbolw" class="qbolw">0.00</span>
+  <span id="fbolsr" class="fbolsr">0.00</span><br>
+  <span id="fbotel" class="fbotel">0.00</span><br>
+  <span id="fbobw" class="fbobw">0.00</span><br>
+  <span id="fbolw" class="fbolw">0.00</span>
   
-  <script src="js/qb.js"></script>
-  <script src="js/qbunderlay.js"></script>
-  <script src="js/qboverlay.js"></script>
-  <script src="js/qbstandard.js"></script>
-  <script src="js/qbmin.js"></script>
-  <script src="js/qbmax.js"></script>
-  <script src="js/qbslider.js"></script>
+  <script src="js/fb.js"></script>
+  <script src="js/fbunderlay.js"></script>
+  <script src="js/fboverlay.js"></script>
+  <script src="js/fbstandard.js"></script>
+  <script src="js/fbmin.js"></script>
+  <script src="js/fbmax.js"></script>
+  <script src="js/fbslider.js"></script>
 </body>
 </html>
