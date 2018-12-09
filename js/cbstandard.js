@@ -88,60 +88,37 @@ function cbStandard() {
   $(".cble").text(cble.toFixed(2));
   $(".cblt").text(cblt.toFixed(2));  
   
-  if(cbbo <= cblo) {
-    //Underlay
-    
-    $(".cbulsr").text(cbulsr.toFixed(2));
-    $(".cbutel").text(cbube.toFixed(2));
-    $(".cbubw").text(cbubt.toFixed(2));
-    $(".cbulw").text(cbult.toFixed(2));
-    
-    //Overlay
-    
-    $(".cbolsr").text(cbolsr.toFixed(2));
-    $(".cbotel").text(cbobe.toFixed(2));
-    $(".cbobw").text(cbobt.toFixed(2));
-    $(".cbolw").text(cbolt.toFixed(2));
-    
-    //Range Slider
-    
-    var cbslidermid = (cbolsr - cblsr) + (35 / 100);
+  //Underlay
+
+  $(".cbulsr").text(cbulsr.toFixed(2));
+  $(".cbutel").text(cbube.toFixed(2));
+  $(".cbubw").text(cbubt.toFixed(2));
+  $(".cbulw").text(cbult.toFixed(2));
+
+  //Overlay
+
+  $(".cbolsr").text(cbolsr.toFixed(2));
+  $(".cbotel").text(cbobe.toFixed(2));
+  $(".cbobw").text(cbobt.toFixed(2));
+  $(".cbolw").text(cbolt.toFixed(2));
+
+  //Range Slider
+
+  if((cblsr - cbulsr) > (cblsr - cbolsr)) {
+    var cbslidermid = (cblsr - cbulsr) + (23 / 100);
     var cbslidermin = cblsr - cbslidermid; 
     var cbslidermax = cblsr + cbslidermid; 
-    
-    $(".cbmin").val(cbslidermin.toFixed(2));
-    $(".cbmax").val(cbslidermax.toFixed(2));
-    
-    document.getElementById("cbslider").min = cbslidermin;
-    document.getElementById("cbslider").max = cbslidermax;
-    document.getElementById("cbslider").value = cblsr;
-    
-  } else if(cbbo > cblo) {
-      //Underlay
-    
-      $(".cbulsr").text(cbolsr.toFixed(2));
-      $(".cbutel").text(cbobe.toFixed(2));
-      $(".cbubw").text(cbobt.toFixed(2));
-      $(".cbulw").text(cbolt.toFixed(2));
-    
-      //Overlay
-    
-      $(".cbolsr").text(cbulsr.toFixed(2));
-      $(".cbotel").text(cbube.toFixed(2));
-      $(".cbobw").text(cbubt.toFixed(2));
-      $(".cbolw").text(cbult.toFixed(2));
-    
-      //Range Slider
-
-      var cbslidermid = (cbulsr - cblsr) + (35 / 100);
+  } else {
+      var cbslidermid = (cbolsr - cblsr) + (23 / 100);
       var cbslidermin = cblsr - cbslidermid; 
       var cbslidermax = cblsr + cbslidermid; 
-    
-      $(".cbmin").val(cbslidermin.toFixed(2));
-      $(".cbmax").val(cbslidermax.toFixed(2));
-
-      document.getElementById("cbslider").min = cbslidermin;
-      document.getElementById("cbslider").max = cbslidermax;
-      document.getElementById("cbslider").value = cblsr;
   }
+
+  $(".cbmin").val(cbslidermin.toFixed(2));
+  $(".cbmax").val(cbslidermax.toFixed(2));
+
+  document.getElementById("cbslider").min = cbslidermin;
+  document.getElementById("cbslider").max = cbslidermax;
+  document.getElementById("cbslider").value = cblsr;
+    
 }

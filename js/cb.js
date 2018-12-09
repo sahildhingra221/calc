@@ -73,10 +73,16 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
     var cbolt = cbolb + cbole + cbolcs;
     
     //Range Slider
-
-    var cbslidermid = (cbolsr - cblsr) + (35 / 100);
-    var cbslidermin = cblsr - cbslidermid; 
-    var cbslidermax = cblsr + cbslidermid; 
+    
+    if((cblsr - cbulsr) > (cblsr - cbolsr)) {
+      var cbslidermid = (cblsr - cbulsr) + (23 / 100);
+      var cbslidermin = cblsr - cbslidermid; 
+      var cbslidermax = cblsr + cbslidermid; 
+    } else {
+        var cbslidermid = (cbolsr - cblsr) + (23 / 100);
+        var cbslidermin = cblsr - cbslidermid; 
+        var cbslidermax = cblsr + cbslidermid; 
+    }
     
     //Conditions NaN && Infinity
     
