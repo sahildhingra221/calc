@@ -7,6 +7,9 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
   var cblc = $.trim( $('input[name=cblc]').val() );
   
   if(cbbs != "" && cbcs != "" && cbbo != "" && cbbc != "" && cblo != "" && cblc != "") {
+    if(cbbs == "-") {
+      $(".cbbs").text("");
+    }
     
     var cbcsval = cbcs;
     //Calculating Percentage
@@ -94,18 +97,29 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
     
     //Conditions NaN && Infinity
     
-    if(isNaN(cbslidermin, cbslidermax, cbcs, cblsr, cbbb, cbbe, cbbt, cblb, cble, cblt)) {
-      cbslidermin = 0.00;
-      cbslidermax = 0.00;
-      cblsr = 0.00;
-      cbbb = 0.00;
-      cbbe = 0.00;
-      cbbt = 0.00;
-      cblb = 0.00;
-      cble = 0.00;
-      cblt = 0.00;
-      cbcs = 0.00;
+    if(isNaN(cbslidermax)) {
+      cbslidermax = 0;
     }
+    
+    if (cbbt === Infinity || cbbt === -Infinity || cbbt === NaN) {
+      cbbt = 0;
+    }
+    if (cblt === Infinity || cblt === -Infinity || cblt === NaN) {
+      cblt = 0;
+    }
+    if (cbbe === Infinity || cbbe === -Infinity || cbbe === NaN) {
+      cbbe = 0;
+    }
+    if (cble === Infinity || cble === -Infinity || cble === NaN) {
+      cble = 0;
+    }
+    if (cbslidermin === Infinity || cbslidermin === -Infinity || cbslidermin === NaN) {
+      cbslidermin = 0;
+    }
+    if (cblsr === Infinity || cblsr === -Infinity || cblsr === NaN) {
+      cblsr = 0;
+    }
+    
 
     //Displaying
     //Lay Stake Required and Standard Value
@@ -144,12 +158,46 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
 
     $(".cbmin").val(cbslidermin.toFixed(2));
     $(".cbmax").val(cbslidermax.toFixed(2));
-
+    
     document.getElementById("cbslider").min = cbslidermin;
     document.getElementById("cbslider").max = cbslidermax;
     document.getElementById("cbslider").value = cblsr;
   } else {
-      document.getElementById("cblsr").innerHTML = parseFloat("0.00").toFixed(2);
-  }
+      var zero = 0;
+      document.getElementById("cblsr").innerHTML = parseFloat(zero).toFixed(2);   $(".cbstandardvalfix").text(zero.toFixed(2));
+      $(".cblsr").text(zero.toFixed(2));
+
+      //Graph
+      //Back
+
+      $(".cbbb").text(zero.toFixed(2));
+      $(".cbbe").text(zero.toFixed(2));
+      $(".cbbcs").text(zero.toFixed(2));
+      $(".cbbt").text(zero.toFixed(2));
+
+      //Lay
+
+      $(".cblb").text(zero.toFixed(2));
+      $(".cble").text(zero.toFixed(2));
+      $(".cblcs").text(zero.toFixed(2));
+      $(".cblt").text(zero.toFixed(2));  
+
+      //Underlay
+
+      $(".cbulsr").text(zero.toFixed(2));
+      $(".cbutel").text(zero.toFixed(2));
+      $(".cbubw").text(zero.toFixed(2));
+      $(".cbulw").text(zero.toFixed(2));
+
+      //Overlay
+
+      $(".cbolsr").text(zero.toFixed(2));
+      $(".cbotel").text(zero.toFixed(2));
+      $(".cbobw").text(zero.toFixed(2));
+      $(".cbolw").text(zero.toFixed(2));
+
+      $(".cbmin").val(zero.toFixed(2));
+      $(".cbmax").val(zero.toFixed(2));
+    } 
   
 });
