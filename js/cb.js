@@ -6,9 +6,9 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
   var cblo = $.trim( $('input[name=cblo]').val() );
   var cblc = $.trim( $('input[name=cblc]').val() );
   
-  if(cbbs != "" && cbcs != "" && cbbo != "" && cbbc != "" && cblo != "" && cblc != "") {
-    if(cbbs == "-") {
-      $(".cbbs").text("");
+  if(cbbs != "" && cbcs != "" && cbbo != "" && cbbc != "" && cblo != "" && cblc != "" && !(cbbs < 0) && !(cbcs < 0) && !(cbbo <= 0) && !(cbbc < 0) && !(cblo <= 0) && !(cblc < 0)) {
+    if(cbbs < 0) {
+      $(".cbbs").text("0");
     }
     
     var cbcsval = cbcs;
@@ -100,27 +100,47 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
     if(isNaN(cbslidermax)) {
       cbslidermax = 0;
     }
-    
-    if (cbbt === Infinity || cbbt === -Infinity || cbbt === NaN) {
-      cbbt = 0;
-    }
-    if (cblt === Infinity || cblt === -Infinity || cblt === NaN) {
-      cblt = 0;
-    }
-    if (cbbe === Infinity || cbbe === -Infinity || cbbe === NaN) {
-      cbbe = 0;
-    }
-    if (cble === Infinity || cble === -Infinity || cble === NaN) {
-      cble = 0;
-    }
-    if (cbslidermin === Infinity || cbslidermin === -Infinity || cbslidermin === NaN) {
+    if(isNaN(cbslidermin)) {
       cbslidermin = 0;
     }
-    if (cblsr === Infinity || cblsr === -Infinity || cblsr === NaN) {
+    if(isNaN(cbbt)) {
+      cbbt = 0;
+    }
+    if(isNaN(cblt)) {
+      cblt = 0;
+    }
+    if(isNaN(cbbe)) {
+      cbbe = 0;
+    }
+    if(isNaN(cble)) {
+      cble = 0;
+    }
+    if(isNaN(cblsr)) {
       cblsr = 0;
     }
     
-
+    if(cblsr === Infinity || cblsr === -Infinity) {
+      cblsr = 0;
+    }
+    if(cbslidermin === Infinity || cbslidermin === -Infinity) {
+      cbslidermin = 0;
+    }
+    if(cbslidermax === Infinity || cbslidermax === -Infinity) {
+      cbslidermax = 0;
+    }
+    if(cbbt === Infinity || cbbt === -Infinity) {
+      cbbt = 0;
+    }
+    if(cblt === Infinity || cblt === -Infinity) {
+      cblt = 0;
+    }
+    if(cbbe === Infinity || cbbe === -Infinity) {
+      cbbe = 0;
+    }
+    if(cble === Infinity || cble === -Infinity) {
+      cble = 0;
+    }
+    
     //Displaying
     //Lay Stake Required and Standard Value
 
