@@ -1,0 +1,19 @@
+*{
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+body{
+  background-image: url(../media/Darkroad.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.wrapper-body{
+  max-width: 650px;
+  margin: 70px auto 100px;
+}
+
+@import "tabbutton";
+@import "calculatordefault";

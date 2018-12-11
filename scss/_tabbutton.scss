@@ -1,0 +1,13 @@
+.tabbuttons{
+  width: 100%;
+}
+.buttoncontainer{
+  button{
+    width: calc(100% / 3);  
+    outline: none;
+    border: none;
+    float: left;
+    font-size: 20px;
+    padding: 15px 0;
+  }
+}

@@ -62,8 +62,26 @@ $('input[name=fbbs], input[name=fbbo], input[name=fbbc], input[name=fblo], input
     var fbolb = 0;
     var fbole = fbolsr * (1 - fblcp);
     var fbolt = fbolb + fbole;
+    
+    //Range Slider
 
-
+    var fbslidermid = (fbolsr - fblsr) + (35 / 100);
+    var fbslidermin = fblsr - fbslidermid; 
+    var fbslidermax = fblsr + fbslidermid; 
+    
+    //Conditions NaN && Infinity
+    if(isNaN(fbslidermin, fbslidermax, fblsr, fbbb, fbbe, fbbt, fblb, fble, fblt)) {
+      fbslidermin = 0.00;
+      fbslidermax = 0.00;
+      fblsr = 0.00;
+      fbbb = 0.00;
+      fbbe = 0.00;
+      fbbt = 0.00;
+      fblb = 0.00;
+      fble = 0.00;
+      fblt = 0.00;
+    }
+    
     //Displaying
     //Lay Stake Required and Standard Value
 
@@ -96,12 +114,6 @@ $('input[name=fbbs], input[name=fbbo], input[name=fbbc], input[name=fblo], input
     $(".fbotel").text(fbobe.toFixed(2));
     $(".fbobw").text(fbobt.toFixed(2));
     $(".fbolw").text(fbolt.toFixed(2));
-
-    //Range Slider
-
-    var fbslidermid = (fbolsr - fblsr) + (35 / 100);
-    var fbslidermin = fblsr - fbslidermid; 
-    var fbslidermax = fblsr + fbslidermid; 
 
     $(".fbmin").val(fbslidermin.toFixed(2));
     $(".fbmax").val(fbslidermax.toFixed(2));

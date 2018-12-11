@@ -99,7 +99,7 @@ function fbUnderlay() {
   //Range Slider
 
   var fbslidermid = (fbolsr - fblsr) + (35 / 100);
-  var fbslidermin = fblsr - fbslidermid; 
+  var fbslidermin = 0; 
   var fbslidermax = fblsr + fbslidermid; 
 
   $(".fbmin").val(fbslidermin.toFixed(2));

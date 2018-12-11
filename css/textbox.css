@@ -1,0 +1,44 @@
+input:focus, input:active {
+  outline: none;
+}
+input[type="text"]{
+  border: none;
+  border-bottom: solid 2px #707070;
+  background: none;
+  color: black;
+  padding: 15px 40px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.input-group {
+  display: inline-block;
+  position: relative;
+}
+
+.ig-rf{
+  float: right;
+  margin-right: 0;
+}
+
+.input-group input {
+  padding: 12px 16px;
+  font-size: 20px;
+}
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #000000;
+  pointer-events: none;
+  transition: all 0.15s ease-out 0s;
+}
+.input-group input:focus + label,
+.input-group input.has-value + label {
+  top: -7px;
+  left: 0;
+  font-size: 16px;
+}

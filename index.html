@@ -2,89 +2,794 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Betting Calculator</title>
-  <!--link rel="stylesheet" href="style.css"-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400">
+  <title>MatchedBettingCalculator | BetBuddyOdds</title>  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400">
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="js/cb.js"></script>
-  <style>
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
-  }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/textbox.css">
 </head>
-<body> 
-  <div class="ver-info">
-    <span>Ver: 0.1.4</span>
-  </div>
+<body>
+
+  <header class="hero-header">
+    <div class="verinfo" style="color: white; background: rgba(0,0,0,0.85); position: absolute; top: 0;">Ver: 0.1.0</div>
+  </header>
+
+  <article class="wrapper-body">
+    
+    <!-- Tab Buttons as per their Calculator Type -->
+    <div class="tabbuttons">
+      <div class="buttoncontainer">
+        <button onclick="showPanel(0)">Qualifying Bet</button>
+        <button onclick="showPanel(1)">Free Bet</button>
+        <button onclick="showPanel(2)">Cash Back Bet</button>
+      </div>
+    </div>
+    
+    <!-- Qualifying Bet Calculator -->
+    
+    <section class="tabpanel panel panel-qualifying">
+     
+     <!-- Panel BackBet Section -->
+      <div class="panel-backbet panel-backbet__qualifying">
+       
+       <!-- Title line for Bet type -->
+        <div class="panel__info panel__info--qualifying">
+          <span>&#45; Use when placing back and lay bets to qualify for a free bet.</span>
+        </div>
+        
+       <!-- Back Bet section title -->
+        <div class="panel-backbet__title panel-backbet__title--qualifying">
+          <span>Back Bet (Bookie)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-backbet__values panel-backbet__values--qualifying">
+          <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="qbbs" id="qbbs" class="qbbs">
+              <label>Back stake</label>
+            </div><br>
+          </div>
+          <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
+            <div class="input-group">
+              <input type="text" name="qbbo" id="qbbo" class="qbbo">
+              <label>Back odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="qbbc" id="qbbc" class="qbbc">
+              <label>Back commission</label>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      
+     <!-- Panel BackBet Section -->
+      <div class="panel-laybet panel-laybet-qualifying">
+      
+       <!-- Back Bet section title -->
+        <div class="panel-laybet__title panel-laybet__title--qualifying">
+          <span>Lay Bet (Betting Exchange)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-laybet__values panel-laybet__values--qualifying">
+          <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="qblo" id="qblo" class="qblo">
+              <label>Lay odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="qblc" id="qblc" class="qblc">
+              <label>Lay commission</label>
+            </div>
+          </div>
+         
+         <!-- Buttons i.e Underlay, Standard, Overlay -->
+          <div class="panel-laybet__buttons panel-laybet__buttons--qualifying">
+           <!-- Wrapper Buttons -->
+            <div class="panel-laybet__buttons--wrap panel-laybet__buttons--wrap-qualifying">
+                <button name="qbunderlay" id="qbunderlay" class="qbunderlay" onclick="qbUnderlay()">UNDERLAY</button>
+                <button name="qbstandard" id="qbstandard" class="qbstandard" onclick="qbStandard()">STANDARD</button>
+                <button name="qboverlay" id="qboverlay" class="qboverlay" onclick="qbOverlay()">OVERLAY</button>
+            </div>
+          </div>
+          
+         <!-- Slider/Range Bar and scale -->
+          <div class="panel-laybet__slider panel-laybet__slider-qualifying">
+          
+           <!-- Slider Bar -->
+            <div class="panel-laybet__slider--bar panel-laybet__slider--bar-qualifying">
+              <input type="range" name="qbslider" id="qbslider" class="qbslider" step="0.01" oninput="qbSlider(this.value,'qbbs','qbbo','qbbc','qblo','qblc')">
+            </div>
+            
+           <!-- Slider Scale -->
+            <div class="panel-laybet__slider--scale panel-laybet__slider--scale--qualifying">
+              <div class="line l1"></div>
+              <div class="line l2"></div>
+              <div class="line l3"></div>
+              <div class="line l4"></div>
+              <div class="line l5"></div>
+              <div class="line l6"></div>
+              <div class="line l7"></div>
+              <div class="line l8"></div>
+              <div class="line l9"></div>
+              <div class="line l10"></div>
+              <div class="line l11"></div>
+              <div class="line l12"></div>
+              <div class="line l13"></div>
+              <div class="line l14"></div>
+              <div class="line l15"></div>
+              <div class="line l16"></div>
+              <div class="line l17"></div>
+              <div class="line l18"></div>
+              <div class="line l19"></div>
+              <div class="line l20"></div>
+              <div class="line l21"></div>
+              <div class="line l22"></div>
+              <div class="line l23"></div>
+              <div class="line l24"></div>
+              <div class="line l25"></div>
+              <div class="line l26"></div>
+              <div class="line l27"></div>
+              <div class="line l28"></div>
+              <div class="line l29"></div>
+              <div class="line l30"></div>
+              <div class="line l31"></div>
+              <div class="line l32"></div>
+              <div class="line l33"></div>
+              <div class="line l34"></div>
+              <div class="line l35"></div>
+              <div class="line l36"></div>
+              <div class="line l37"></div>
+              <div class="line l38"></div>
+              <div class="line l39"></div>
+              <div class="line l40"></div>
+              <div class="line l41"></div>
+              <div class="line l42"></div>
+              <div class="line l43"></div>
+              <div class="line l44"></div>
+              <div class="line l45"></div>
+              <div class="line l46"></div>
+              <div class="line l47"></div>
+              <div class="line l48"></div>
+              <div class="line l49"></div>
+            </div>
+          </div>
+          
+         <!-- Min, Standard, Max Values -->
+          <div class="panel-laybet__minmax panel-laybet__minmax--qualifying">
+            
+            <div class="panel-laybet__minmax--min panel-laybet__minmax--min-qualifying">
+              <div class="min">
+                <div class="min__text"><span>Min &euro;</span></div>
+                <div class="min__value">
+                  <input type="number" name="qbmin" id="qbmin" class="qbmin" onkeyup="qbMin()" value="0.00">
+                </div>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--standard panel-laybet__minmax--standard-qualifying">
+              <div class="standard">&euro;
+                <span id="qbstandardvalfix" class="qbstandardvalfix">0.00</span>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--max panel-laybet__minmax--max-qualifying">
+              <div class="max">
+                <div class="max__text"><span>Max &euro;</span></div>
+                <div class="max__value">
+                  <input type="number" name="qbmax" id="qbmax" class="qbmax" onkeyup="qbMax()" value="0.00">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lay stake result -->
+      <div class="laystake-val laystake-val--qualifying">
+        <div class="laystake-val__wrapper laystake-val__wrapper-qualifying">
+          Lay stake required: &euro; <span id="qblsr" class="qblsr">0.00</span>
+        </div>
+      </div>
+      
+      <!-- Quick Results -->
+      <div class="quickresult quickresult__qualifying">
+        
+        <table class="quickresult__table quickresult__table-qualifying">
+          
+          <tr class="quickresult__table--row1 row1-qualifying quickresult__table--row1-qualifying">
+            <th class="row1-qualifying__col1"></th>
+            <th class="row1-qualifying__col2">Bookie</th>
+            <th class="row1-qualifying__col3">|</th>
+            <th class="row1-qualifying__col4">Exchange</th>
+            <th class="row1-qualifying__col5">=</th>
+            <th class="row1-qualifying__col6">Total</th>
+          </tr>
+          
+          <tr class="quickresult__table--row2 row2-qualifying quickresult__table--row2-qualifying">
+            <td class="row2-qualifying__col1"><div class="bs"></div>If <b>back</b> bet wins</td>
+            <td class="row2-qualifying__col2">&euro; <span id="qbbb" class="qbbb">0.00</span></td>
+            <td class="row2-qualifying__col3">|</td>
+            <td class="row2-qualifying__col4">&euro; <span id="qbbe" class="qbbe">0.00</span></td>
+            <td class="row2-qualifying__col5">=</td>
+            <td class="row2-qualifying__col6">&euro; <span id="qbbt" class="qbbt">0.00</span></td>
+          </tr>
+          
+          <tr class="quickresult__table--row3 row3-qualifying quickresult__table--row3-qualifying">
+            <td class="row3-qualifying__col1"><div class="bs2"></div>If <b>lay</b> bet wins</td>
+            <td class="row3-qualifying__col2">&euro; <span id="qblb" class="qblb">0.00</span></td>
+            <td class="row3-qualifying__col3">|</td>
+            <td class="row3-qualifying__col4">&euro; <span id="qble" class="qble">0.00</span></td>
+            <td class="row3-qualifying__col5">=</td>
+            <td class="row3-qualifying__col6">&euro; <span id="qblt" class="qblt">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+      
+     <!-- More Details Results -->
+      <div class="moreresults moreresults__qualifying">
+
+      <button class="accordion">More Details/Results</button>
+      <div class="mpanel">
+        <table class="moreresults__show">
+          <tr class="moreresults__show--row moreresults__show--row1">
+            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row2">
+            <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="qbulsr" class="qbulsr">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row2-col3">&euro; <span id="qbolsr" class="qbolsr">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row3">
+            <td class="moreresults__show--row-col moreresults__show--row3-col1">Total exchange liability</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row3-col2">&euro; <span id="qbutel" class="qbutel">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row3-col3">&euro; <span id="qbotel" class="qbotel">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row4">
+            <td class="bold moreresults__show--row-col moreresults__show--row4-col1">If back (bookie) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row4-col2">&euro; <span id="qbubw" class="qbubw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row4-col3">&euro; <span id="qbobw" class="qbobw">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row5">
+            <td class="bold moreresults__show--row-col moreresults__show--row5-col1">If lay (exchange) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row5-col2">&euro; <span id="qbulw" class="qbulw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row5-col3">&euro; <span id="qbolw" class="qbolw">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+        
+      </div>
+      
+    </section>
+    
+      
+          
+    <!-- Free Bet Calculator -->
+
+    <section class="tabpanel panel panel-freebet">
+    
+         <!-- Panel BackBet Section -->
+      <div class="panel-backbet panel-backbet__qualifying">
+       
+       <!-- Title line for Bet type -->
+        <div class="panel__info panel__info--qualifying">
+          <span>&#45; Use when extracting profit from a free bet or bonus.</span>
+        </div>
+        
+       <!-- Back Bet section title -->
+        <div class="panel-backbet__title panel-backbet__title--qualifying">
+          <span>Back Bet (Bookie)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-backbet__values panel-backbet__values--qualifying">
+          <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="fbbs" id="fbbs" class="fbbs">
+              <label>Back stake</label>
+            </div><br>
+          </div>
+          <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
+            <div class="input-group">
+              <input type="text" name="fbbo" id="fbbo" class="fbbo">
+              <label>Back odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="fbbc" id="fbbc" class="fbbc">
+              <label>Back commission</label>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      
+     <!-- Panel BackBet Section -->
+      <div class="panel-laybet panel-laybet-qualifying">
+      
+       <!-- Back Bet section title -->
+        <div class="panel-laybet__title panel-laybet__title--qualifying">
+          <span>Lay Bet (Betting Exchange)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-laybet__values panel-laybet__values--qualifying">
+          <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="fblo" id="fblo" class="fblo">
+              <label>Lay odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="fblc" id="fblc" class="fblc">
+              <label>Lay commission</label>
+            </div>
+          </div>
+         
+         <!-- Buttons i.e Underlay, Standard, Overlay -->
+          <div class="panel-laybet__buttons panel-laybet__buttons--qualifying">
+           <!-- Wrapper Buttons -->
+            <div class="panel-laybet__buttons--wrap panel-laybet__buttons--wrap-qualifying">
+              <button name="fbunderlay" id="fbunderlay" class="fbunderlay" onclick="fbUnderlay()">UNDERLAY</button>
+              <button name="fbstandard" id="fbstandard" class="fbstandard" onclick="fbStandard()">STANDARD</button>
+              <button name="fboverlay" id="fboverlay" class="fboverlay" onclick="fbOverlay()">OVERLAY</button>
+            </div>
+          </div>
+          
+         <!-- Slider/Range Bar and scale -->
+          <div class="panel-laybet__slider panel-laybet__slider-qualifying">
+          
+           <!-- Slider Bar -->
+            <div class="panel-laybet__slider--bar panel-laybet__slider--bar-qualifying">
+              <input type="range" name="fbslider" id="fbslider" class="fbslider" step="0.01" oninput="fbSlider(this.value,'fbbs','fbbo','fbbc','fblo','fblc')">
+            </div>
+            
+           <!-- Slider Scale -->
+            <div class="panel-laybet__slider--scale panel-laybet__slider--scale--qualifying">
+              <div class="line l1"></div>
+              <div class="line l2"></div>
+              <div class="line l3"></div>
+              <div class="line l4"></div>
+              <div class="line l5"></div>
+              <div class="line l6"></div>
+              <div class="line l7"></div>
+              <div class="line l8"></div>
+              <div class="line l9"></div>
+              <div class="line l10"></div>
+              <div class="line l11"></div>
+              <div class="line l12"></div>
+              <div class="line l13"></div>
+              <div class="line l14"></div>
+              <div class="line l15"></div>
+              <div class="line l16"></div>
+              <div class="line l17"></div>
+              <div class="line l18"></div>
+              <div class="line l19"></div>
+              <div class="line l20"></div>
+              <div class="line l21"></div>
+              <div class="line l22"></div>
+              <div class="line l23"></div>
+              <div class="line l24"></div>
+              <div class="line l25"></div>
+              <div class="line l26"></div>
+              <div class="line l27"></div>
+              <div class="line l28"></div>
+              <div class="line l29"></div>
+              <div class="line l30"></div>
+              <div class="line l31"></div>
+              <div class="line l32"></div>
+              <div class="line l33"></div>
+              <div class="line l34"></div>
+              <div class="line l35"></div>
+              <div class="line l36"></div>
+              <div class="line l37"></div>
+              <div class="line l38"></div>
+              <div class="line l39"></div>
+              <div class="line l40"></div>
+              <div class="line l41"></div>
+              <div class="line l42"></div>
+              <div class="line l43"></div>
+              <div class="line l44"></div>
+              <div class="line l45"></div>
+              <div class="line l46"></div>
+              <div class="line l47"></div>
+              <div class="line l48"></div>
+              <div class="line l49"></div>
+            </div>
+          </div>
+          
+         <!-- Min, Standard, Max Values -->
+          <div class="panel-laybet__minmax panel-laybet__minmax--qualifying">
+            
+            <div class="panel-laybet__minmax--min panel-laybet__minmax--min-qualifying">
+              <div class="min">
+                <div class="min__text"><span>Min &euro;</span></div>
+                <div class="min__value">
+                  <input type="number" name="fbmin" id="fbmin" class="fbmin" onkeyup="fbMin()" value="0.00">
+                </div>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--standard panel-laybet__minmax--standard-qualifying">
+              <div class="standard">&euro;
+                <span id="fbstandardvalfix" class="fbstandardvalfix">0.00</span>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--max panel-laybet__minmax--max-qualifying">
+              <div class="max">
+                <div class="max__text"><span>Max &euro;</span></div>
+                <div class="max__value">
+                  <input type="number" name="fbmax" id="fbmax" class="fbmax" onkeyup="fbMax()" value="0.00">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lay stake result -->
+      <div class="laystake-val laystake-val--qualifying">
+        <div class="laystake-val__wrapper laystake-val__wrapper-qualifying">
+          Lay stake required: &euro; <span id="fblsr" class="fblsr">0.00</span>
+        </div>
+      </div>
+      
+      <!-- Quick Results -->
+      <div class="quickresult quickresult__qualifying">
+        
+        <table class="quickresult__table quickresult__table-qualifying">
+          
+          <tr class="quickresult__table--row1 row1-qualifying quickresult__table--row1-qualifying">
+            <th class="row1-qualifying__col1"></th>
+            <th class="row1-qualifying__col2">Bookie</th>
+            <th class="row1-qualifying__col3">|</th>
+            <th class="row1-qualifying__col4">Exchange</th>
+            <th class="row1-qualifying__col5">=</th>
+            <th class="row1-qualifying__col6">Total</th>
+          </tr>
+          
+          <tr class="quickresult__table--row2 row2-qualifying quickresult__table--row2-qualifying">
+            <td class="row2-qualifying__col1"><div class="bs"></div>If <b>back</b> bet wins</td>
+            <td class="row2-qualifying__col2">&euro; <span id="fbbb" class="fbbb">0.00</span></td>
+            <td class="row2-qualifying__col3">|</td>
+            <td class="row2-qualifying__col4">&euro; <span id="fbbe" class="fbbe">0.00</span></td>
+            <td class="row2-qualifying__col5">=</td>
+            <td class="row2-qualifying__col6">&euro; <span id="fbbt" class="fbbt">0.00</span></td>
+          </tr>
+          
+          <tr class="quickresult__table--row3 row3-qualifying quickresult__table--row3-qualifying">
+            <td class="row3-qualifying__col1"><div class="bs2"></div>If <b>lay</b> bet wins</td>
+            <td class="row3-qualifying__col2">&euro; <span id="fblb" class="fblb">0.00</span></td>
+            <td class="row3-qualifying__col3">|</td>
+            <td class="row3-qualifying__col4">&euro; <span id="fble" class="fble">0.00</span></td>
+            <td class="row3-qualifying__col5">=</td>
+            <td class="row3-qualifying__col6">&euro; <span id="fblt" class="fblt">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+      
+     <!-- More Details Results -->
+      <div class="moreresults moreresults__qualifying">
+
+      <button class="accordion">More Details/Results</button>
+      <div class="mpanel">
+        <table class="moreresults__show">
+          <tr class="moreresults__show--row moreresults__show--row1">
+            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row2">
+            <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="fbulsr" class="fbulsr">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row2-col3">&euro; <span id="fbolsr" class="fbolsr">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row3">
+            <td class="moreresults__show--row-col moreresults__show--row3-col1">Total exchange liability</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row3-col2">&euro; <span id="fbutel" class="fbutel">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row3-col3">&euro; <span id="fbotel" class="fbotel">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row4">
+            <td class="bold moreresults__show--row-col moreresults__show--row4-col1">If back (bookie) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row4-col2">&euro; <span id="fbubw" class="fbubw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row4-col3">&euro; <span id="fbobw" class="fbobw">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row5">
+            <td class="bold moreresults__show--row-col moreresults__show--row5-col1">If lay (exchange) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row5-col2">&euro; <span id="fbulw" class="fbulw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row5-col3">&euro; <span id="fbolw" class="fbolw">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+        
+      </div>
+    
+    </section>
+    
+    
+    
+    
+    <!-- Cash Back Bet Calculator -->
+    
+    <section class="tabpanel panel panel-cashback">
+    
+             <!-- Panel BackBet Section -->
+      <div class="panel-backbet panel-backbet__qualifying">
+       
+       <!-- Title line for Bet type -->
+        <div class="panel__info panel__info--qualifying">
+          <span>&#45;  Use to calculate the lay stake for a risk-free bet.</span>
+        </div>
+        
+       <!-- Back Bet section title -->
+        <div class="panel-backbet__title panel-backbet__title--qualifying">
+          <span>Back Bet (Bookie)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-backbet__values panel-backbet__values--qualifying">
+          <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="cbbs" id="cbbs" class="cbbs">
+              <label>Back stake</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="cbcs" id="cbcs" class="cbcs">
+              <label>Cashback</label>
+            </div>
+          </div>
+          <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
+            <div class="input-group">
+              <input type="text" name="cbbo" id="cbbo" class="cbbo">
+              <label>Back odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="cbbc" id="cbbc" class="cbbc">
+              <label>Back commission</label>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      
+     <!-- Panel BackBet Section -->
+      <div class="panel-laybet panel-laybet-qualifying">
+      
+       <!-- Back Bet section title -->
+        <div class="panel-laybet__title panel-laybet__title--qualifying">
+          <span>Lay Bet (Betting Exchange)</span>
+        </div>
+        
+       <!-- Back Bet values section -->
+        <div class="panel-laybet__values panel-laybet__values--qualifying">
+          <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
+            <div class="input-group">
+              <input type="text" name="cblo" id="cblo" class="cblo">
+              <label>Lay odds (decimal)</label>
+            </div>
+            <div class="input-group ig-rf">
+              <input type="text" name="cblc" id="cblc" class="cblc">
+              <label>Lay commission</label>
+            </div>
+          </div>
+         
+         <!-- Buttons i.e Underlay, Standard, Overlay -->
+          <div class="panel-laybet__buttons panel-laybet__buttons--qualifying">
+           <!-- Wrapper Buttons -->
+            <div class="panel-laybet__buttons--wrap panel-laybet__buttons--wrap-qualifying">
+              <button name="cbunderlay" id="cbunderlay" class="cbunderlay" onclick="cbUnderlay()">UNDERLAY</button>
+              <button name="cbstandard" id="cbstandard" class="cbstandard" onclick="cbStandard()">STANDARD</button>
+              <button name="cboverlay" id="cboverlay" class="cboverlay" onclick="cbOverlay()">OVERLAY</button>
+            </div>
+          </div>
+          
+         <!-- Slider/Range Bar and scale -->
+          <div class="panel-laybet__slider panel-laybet__slider-qualifying">
+          
+           <!-- Slider Bar -->
+            <div class="panel-laybet__slider--bar panel-laybet__slider--bar-qualifying">
+             <input type="range" name="cbslider" id="cbslider" class="cbslider" step="0.01" oninput="cbSlider(this.value,'cbbs','cbcs','cbbo','cbbc','cblo','cblc')">
+            </div>
+            
+           <!-- Slider Scale -->
+            <div class="panel-laybet__slider--scale panel-laybet__slider--scale--qualifying">
+              <div class="line l1"></div>
+              <div class="line l2"></div>
+              <div class="line l3"></div>
+              <div class="line l4"></div>
+              <div class="line l5"></div>
+              <div class="line l6"></div>
+              <div class="line l7"></div>
+              <div class="line l8"></div>
+              <div class="line l9"></div>
+              <div class="line l10"></div>
+              <div class="line l11"></div>
+              <div class="line l12"></div>
+              <div class="line l13"></div>
+              <div class="line l14"></div>
+              <div class="line l15"></div>
+              <div class="line l16"></div>
+              <div class="line l17"></div>
+              <div class="line l18"></div>
+              <div class="line l19"></div>
+              <div class="line l20"></div>
+              <div class="line l21"></div>
+              <div class="line l22"></div>
+              <div class="line l23"></div>
+              <div class="line l24"></div>
+              <div class="line l25"></div>
+              <div class="line l26"></div>
+              <div class="line l27"></div>
+              <div class="line l28"></div>
+              <div class="line l29"></div>
+              <div class="line l30"></div>
+              <div class="line l31"></div>
+              <div class="line l32"></div>
+              <div class="line l33"></div>
+              <div class="line l34"></div>
+              <div class="line l35"></div>
+              <div class="line l36"></div>
+              <div class="line l37"></div>
+              <div class="line l38"></div>
+              <div class="line l39"></div>
+              <div class="line l40"></div>
+              <div class="line l41"></div>
+              <div class="line l42"></div>
+              <div class="line l43"></div>
+              <div class="line l44"></div>
+              <div class="line l45"></div>
+              <div class="line l46"></div>
+              <div class="line l47"></div>
+              <div class="line l48"></div>
+              <div class="line l49"></div>
+            </div>
+          </div>
+          
+         <!-- Min, Standard, Max Values -->
+          <div class="panel-laybet__minmax panel-laybet__minmax--qualifying">
+            
+            <div class="panel-laybet__minmax--min panel-laybet__minmax--min-qualifying">
+              <div class="min">
+                <div class="min__text"><span>Min &euro;</span></div>
+                <div class="min__value">
+                  <input type="number" name="cbmin" id="cbmin" class="cbmin" value="0.00" onkeyup="cbMin()">
+                </div>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--standard panel-laybet__minmax--standard-qualifying">
+              <div class="standard">&euro;
+                <span id="cbstandardvalfix" class="cbstandardvalfix">0.00</span>
+              </div>
+            </div>
+            
+            <div class="panel-laybet__minmax--max panel-laybet__minmax--max-qualifying">
+              <div class="max">
+                <div class="max__text"><span>Max &euro;</span></div>
+                <div class="max__value">
+                  <input type="number" name="cbmax" id="cbmax" class="cbmax" value="0.00" onkeyup="cbMax()">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lay stake result -->
+      <div class="laystake-val laystake-val--qualifying">
+        <div class="laystake-val__wrapper laystake-val__wrapper-qualifying">
+          Lay stake required: &euro; <span id="cblsr" class="cblsr">0.00</span>
+        </div>
+      </div>
+      
+      <!-- Quick Results -->
+      <div class="quickresult quickresult__qualifying">
+        
+        <table class="cbcalc quickresult__table quickresult__table-qualifying">
+          
+          <tr class="quickresult__table--row1 row1-qualifying quickresult__table--row1-qualifying">
+            <th class="row1-qualifying__col1"></th>
+            <th class="row1-qualifying__col2">Bookie</th>
+            <th class="rm-padding row1-qualifying__col3">|</th>
+            <th class="rm-extra row1-qualifying__col4">Exchange</th>
+            <th class="rm-padding row1-qualifying__col3">|</th>
+            <th class="row1-qualifying__col7">Cashback</th>
+            <th class="divide-padding row1-qualifying__col5">=</th>
+            <th class="in-width row1-qualifying__col6">Total</th>
+          </tr>
+          
+          <tr class="quickresult__table--row2 row2-qualifying quickresult__table--row2-qualifying">
+            <td class="row2-qualifying__col1"><div class="bs"></div>If <b>back</b> bet wins</td>
+            <td class="row2-qualifying__col2">&euro; <span id="cbbb" class="cbbb">0.00</span></td>
+            <td class="rm-padding row2-qualifying__col3">|</td>
+            <td class="rm-extra row2-qualifying__col4">&euro; <span id="cbbe" class="cbbe">0.00</span></td>
+            <td class="rm-padding row2-qualifying__col3">|</td>
+            <td class="row2-qualifying__col7">&euro; <span id="cbbcs" class="cbbcs">0.00</span></td>
+            <td class="divide-padding row2-qualifying__col5">=</td>
+            <td class="align-center in-width row2-qualifying__col6">&euro; <span id="cbbt" class="cbbt">0.00</span></td>
+          </tr>
+          
+          <tr class="quickresult__table--row3 row3-qualifying quickresult__table--row3-qualifying">
+            <td class="row3-qualifying__col1"><div class="bs2"></div>If <b>lay</b> bet wins</td>
+            <td class="row3-qualifying__col2">&euro; <span id="cblb" class="cblb">0.00</span></td>
+            <td class="rm-padding row3-qualifying__col3">|</td>
+            <td class="rm-extra row3-qualifying__col4">&euro; <span id="cble" class="cble">0.00</span></td>
+            <td class="rm-padding row3-qualifying__col3">|</td>
+            <td class="row3-qualifying__col7">&euro; <span id="cblcs" class="cblcs">0.00</span></td>
+            <td class="divide-padding row3-qualifying__col5">=</td>
+            <td class="align-center in-width row3-qualifying__col6">&euro; <span id="cblt" class="cblt">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+      
+     <!-- More Details Results -->
+      <div class="moreresults moreresults__qualifying">
+
+      <button class="accordion">More Details/Results</button>
+      <div class="mpanel">
+        <table class="moreresults__show">
+          <tr class="moreresults__show--row moreresults__show--row1">
+            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
+            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row2">
+            <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="cbulsr" class="cbulsr">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row2-col3">&euro; <span id="cbolsr" class="cbolsr">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row3">
+            <td class="moreresults__show--row-col moreresults__show--row3-col1">Total exchange liability</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row3-col2">&euro; <span id="cbutel" class="cbutel">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row3-col3">&euro; <span id="cbotel" class="cbotel">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row4">
+            <td class="bold moreresults__show--row-col moreresults__show--row4-col1">If back (bookie) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row4-col2">&euro; <span id="cbubw" class="cbubw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row4-col3">&euro; <span id="cbobw" class="cbobw">0.00</span></td>
+          </tr>
+          <tr class="moreresults__show--row moreresults__show--row5">
+            <td class="bold moreresults__show--row-col moreresults__show--row5-col1">If lay (exchange) bet wins</td>
+            <td class="whiteopacited moreresults__show--row-col moreresults__show--row5-col2">&euro; <span id="cbulw" class="cbulw">0.00</span></td>
+            <td class="blackopacited moreresults__show--row-col moreresults__show--row5-col3">&euro; <span id="cbolw" class="cbolw">0.00</span></td>
+          </tr>
+        </table>
+      </div>
+        
+      </div>
+    
+    </section>
   
-  <!-- Qualifying Bet -->
-  <span>Back Stake: </span>
-  <input type="number" name="cbbs" id="cbbs" class="cbbs">
-  <span>Cash Back: </span>
-  <input type="number" name="cbcs" id="cbcs" class="cbcs">
-  <br>
-  <span>Back Odds: </span>
-  <input type="number" name="cbbo" id="cbbo" class="cbbo">
-  <span>Back Commision: </span>
-  <input type="number" name="cbbc" id="cbbc" class="cbbc"><br>
+  </article>
   
-  <span>Lay Odds: </span>
-  <input type="number" name="cblo" id="cblo" class="cblo">
-  <span>Lay Commision: </span>
-  <input type="number" name="cblc" id="cblc" class="cblc"><br>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/tabswitch.js"></script>
+<script src="js/inputboxanimator.js"></script>
+<script src="js/accordian.js"></script>
+<script src="js/qb.js"></script>
+<script src="js/qbmax.js"></script>
+<script src="js/qbmin.js"></script>
+<script src="js/qbslider.js"></script>
+<script src="js/qboverlay.js"></script>
+<script src="js/qbstandard.js"></script>
+<script src="js/qbunderlay.js"></script>
+<script src="js/fb.js"></script>
+<script src="js/fbmax.js"></script>
+<script src="js/fbmin.js"></script>
+<script src="js/fbslider.js"></script>
+<script src="js/fboverlay.js"></script>
+<script src="js/fbstandard.js"></script>
+<script src="js/fbunderlay.js"></script>
+<script src="js/cb.js"></script>
+<script src="js/cbmax.js"></script>
+<script src="js/cbmin.js"></script>
+<script src="js/cbslider.js"></script>
+<script src="js/cboverlay.js"></script>
+<script src="js/cbstandard.js"></script>
+<script src="js/cbunderlay.js"></script>
   
-  <button name="cbunderlay" id="cbunderlay" class="cbunderlay" onclick="cbUnderlay()">UNDERLAY</button>
-  <button name="cbstandard" id="cbstandard" class="cbstandard" onclick="cbStandard()">STANDARD</button>
-  <button name="cboverlay" id="cboverlay" class="cboverlay" onclick="cbOverlay()">OVERLAY</button><br>
-  
-  <!--input type="range" name="cbslider" id="cbslider" class="cbslider" step="0.01" oninput="cbSlider(this.value,'cbbs','cbcs',cbbo','cbbc','cblo','cblc')" style="width: 560px"><br-->
-  <input type="range" name="cbslider" id="cbslider" class="cbslider" step="0.01" oninput="cbSlider(this.value,'cbbs','cbcs','cbbo','cbbc','cblo','cblc')" style="width: 560px"><br>
-  
-  <span>Min: </span>
-  <input type="text" name="cbmin" id="cbmin" class="cbmin" value="0.00" onkeyup="cbMin()">
-  <span id="cbstandardvalfix" class="cbstandardvalfix">0.00</span>
-  <span>Max: </span>
-  <input type="text" name="cbmax" id="cbmax" class="cbmax" value="0.00" onkeyup="cbMax()"><br>
-  
-  <span id="cblsr" class="cblsr">0.00</span><br><br>
-  
-  <span>Bookie</span>
-  <span>Exchange</span>
-  <span>Cashback</span>
-  <span>Total</span><br>
-  <span id="cbbb" class="cbbb">0.00</span>
-  <span id="cbbe" class="cbbe">0.00</span>
-  <span id="cbbcs" class="cbbcs">0.00</span>
-  <span id="cbbt" class="cbbt">0.00</span><br>
-  <span id="cblb" class="cblb">0.00</span>
-  <span id="cble" class="cble">0.00</span>
-  <span id="cblcs" class="cblcs">0.00</span>
-  <span id="cblt" class="cblt">0.00</span><br><br>
-  
-  <span>Optimal Underlay: </span><br>
-  <span id="cbulsr" class="cbulsr">0.00</span><br>
-  <span id="cbutel" class="cbutel">0.00</span><br>
-  <span id="cbubw" class="cbubw">0.00</span><br>
-  <span id="cbulw" class="cbulw">0.00</span><br><br>
-  
-  <span>Optimal Overlay: </span><br>
-  <span id="cbolsr" class="cbolsr">0.00</span><br>
-  <span id="cbotel" class="cbotel">0.00</span><br>
-  <span id="cbobw" class="cbobw">0.00</span><br>
-  <span id="cbolw" class="cbolw">0.00</span>
-  
-  <script src="js/cb.js"></script>
-  <script src="js/cbunderlay.js"></script>
-  <script src="js/cboverlay.js"></script>
-  <script src="js/cbstandard.js"></script>
-  <script src="js/cbmin.js"></script>
-  <script src="js/cbmax.js"></script>
-  <script src="js/cbslider.js"></script>
 </body>
 </html>
