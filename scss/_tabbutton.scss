@@ -2,9 +2,6 @@
   width: 100%;
 }
 .buttoncontainer{
-  @media screen and (max-width:400px) {
-    //display: -webkit-box;
-  }
   button{
     width: calc(100% / 3);  
     outline: none;
@@ -13,5 +10,8 @@
     font-size: 18px;
     padding: 15px 0;
     border-collapse: collapse;
+    @media screen and (max-width:390px) {
+      font-size: 15px;
+    }
   }
 }

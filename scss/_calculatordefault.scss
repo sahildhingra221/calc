@@ -121,6 +121,21 @@ input[type=number]::-webkit-outer-spin-button {
         width: 1px;
         margin: 0 0.925%;
         background-color: #262F30;
+        @media screen and (max-width:510px) {
+          margin: 0 0.91%;
+        }
+        @media screen and (max-width:480px) {
+          margin: 0 0.905%;
+        }
+        @media screen and (max-width:460px) {
+          margin: 0 0.901%;
+        }
+        @media screen and (max-width:440px) {
+          margin: 0 0.896%;
+        }
+        @media screen and (max-width:400px) {
+          margin: 0 0.87%;
+        }
       }
       .l1, .l25, .l49{
         height: 20px;

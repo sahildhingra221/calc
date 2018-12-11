@@ -32,7 +32,7 @@ body {
   width: 100%;
 }
 
-/* line 8, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
+/* line 5, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
 .buttoncontainer button {
   width: calc(100% / 3);
   outline: none;
@@ -41,6 +41,13 @@ body {
   font-size: 18px;
   padding: 15px 0;
   border-collapse: collapse;
+}
+
+@media screen and (max-width: 390px) {
+  /* line 5, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
+  .buttoncontainer button {
+    font-size: 15px;
+  }
 }
 
 /* line 1, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
@@ -224,13 +231,48 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #262F30;
 }
 
-/* line 125, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+@media screen and (max-width: 510px) {
+  /* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__slider--scale .line {
+    margin: 0 0.91%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__slider--scale .line {
+    margin: 0 0.905%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  /* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__slider--scale .line {
+    margin: 0 0.901%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__slider--scale .line {
+    margin: 0 0.896%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__slider--scale .line {
+    margin: 0 0.87%;
+  }
+}
+
+/* line 140, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__slider--scale .l1, .panel-laybet__slider--scale .l25, .panel-laybet__slider--scale .l49 {
   height: 20px;
   width: 2px;
 }
 
-/* line 131, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 146, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax {
   margin-top: 10px;
   display: -webkit-box;
@@ -238,12 +280,12 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-/* line 136, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 151, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--min {
   width: calc(100% / 3);
 }
 
-/* line 138, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 153, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--min .min {
   width: 115px;
   display: -webkit-box;
@@ -253,7 +295,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
 }
 
-/* line 146, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 161, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--min .min__value input {
   border: none;
   background: #FFBCCB;
@@ -262,25 +304,25 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 10px;
 }
 
-/* line 156, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 171, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--standard {
   width: calc(100% / 3);
   text-align: center;
 }
 
-/* line 159, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 174, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--standard .standard {
   padding-top: 10px;
   font-size: 20px;
 }
 
-/* line 164, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 179, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--max {
   width: calc(100% / 3);
   position: relative;
 }
 
-/* line 167, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 182, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--max .max {
   position: absolute;
   right: 0;
@@ -292,7 +334,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
 }
 
-/* line 177, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 192, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .panel-laybet__minmax--max .max__value input {
   border: none;
   background: #FFBCCB;
@@ -301,7 +343,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 10px;
 }
 
-/* line 191, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 206, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .laystake-val {
   background: #262F30;
   color: white;
@@ -312,7 +354,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
-/* line 199, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 214, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .laystake-val:after {
   bottom: 100%;
   left: 50%;
@@ -328,45 +370,45 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: -18px;
 }
 
-/* line 215, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 230, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult {
   margin-top: 15px;
 }
 
-/* line 218, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 233, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult .cbcalc .rm-padding {
   padding: 0 15px;
 }
 
-/* line 221, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 236, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult .cbcalc .in-width {
   width: 25%;
 }
 
-/* line 224, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 239, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult .cbcalc .divide-padding {
   padding: 0 7.5px;
 }
 
-/* line 227, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 242, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult .cbcalc .rm-extra {
   padding-right: 0;
 }
 
-/* line 230, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 245, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult .cbcalc .align-center {
   padding-right: 0;
   text-align: left;
 }
 
-/* line 235, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 250, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table {
   border-collapse: collapse;
   text-align: right;
   width: 100%;
 }
 
-/* line 239, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 254, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row1 {
   background: #262F30;
   color: white;
@@ -374,72 +416,72 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-/* line 245, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 260, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row1 th:nth-child(1), .quickresult__table--row1 td:nth-child(1) {
   width: 35%;
 }
 
-/* line 248, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 263, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row1 th:nth-child(2), .quickresult__table--row1 th:nth-child(4), .quickresult__table--row1 th:nth-child(6), .quickresult__table--row1 td:nth-child(2), .quickresult__table--row1 td:nth-child(4), .quickresult__table--row1 td:nth-child(6) {
   width: 18%;
 }
 
-/* line 253, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 268, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row2 {
   background: #F0F8FF;
   font-weight: 500;
 }
 
-/* line 257, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 272, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row2 td:nth-child(1) {
   text-align: left;
   padding-left: 15px;
 }
 
-/* line 263, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 278, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row2 th:nth-child(1), .quickresult__table--row2 td:nth-child(1) {
   width: 35%;
 }
 
-/* line 266, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 281, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row2 th:nth-child(2), .quickresult__table--row2 th:nth-child(4), .quickresult__table--row2 th:nth-child(6), .quickresult__table--row2 td:nth-child(2), .quickresult__table--row2 td:nth-child(4), .quickresult__table--row2 td:nth-child(6) {
   width: 18%;
 }
 
-/* line 271, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 286, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row3 {
   background: #CBE2E5;
   font-weight: 500;
 }
 
-/* line 275, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 290, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row3 td:nth-child(1) {
   text-align: left;
   padding-left: 15px;
 }
 
-/* line 281, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 296, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row3 th:nth-child(1), .quickresult__table--row3 td:nth-child(1) {
   width: 35%;
 }
 
-/* line 284, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 299, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table--row3 th:nth-child(2), .quickresult__table--row3 th:nth-child(4), .quickresult__table--row3 th:nth-child(6), .quickresult__table--row3 td:nth-child(2), .quickresult__table--row3 td:nth-child(4), .quickresult__table--row3 td:nth-child(6) {
   width: 18%;
 }
 
-/* line 290, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 305, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col1 {
   width: 40%;
   padding: 25px 0;
 }
 
-/* line 294, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 309, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col2 {
   width: 15%;
 }
 
-/* line 297, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 312, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col3 {
   width: 2%;
   padding: 0 30px;
@@ -449,19 +491,19 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 22px;
 }
 
-/* line 305, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 320, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col4 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 309, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 324, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col7 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 313, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 328, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col5 {
   width: 2%;
   padding: 0 0 0 15px;
@@ -469,13 +511,13 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: lighter;
 }
 
-/* line 319, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 334, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row1-qualifying__col6 {
   width: 12%;
   padding-right: 20px;
 }
 
-/* line 325, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 340, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col1 {
   width: 50%;
   padding: 10px 25px 10px 0;
@@ -485,7 +527,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
-/* line 332, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 347, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col1 .bs {
   position: absolute;
   height: 100%;
@@ -495,12 +537,12 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: -1;
 }
 
-/* line 341, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 356, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col2 {
   width: 15%;
 }
 
-/* line 344, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 359, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col3 {
   width: 2%;
   padding: 0 30px 0;
@@ -509,19 +551,19 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 22px;
 }
 
-/* line 351, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 366, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col4 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 355, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 370, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col7 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 359, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 374, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col5 {
   width: 2%;
   padding: 0 0 0 15px;
@@ -529,7 +571,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(0, 0, 0, 0.07);
 }
 
-/* line 365, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 380, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row2-qualifying__col6 {
   width: 12%;
   padding-right: 20px;
@@ -537,7 +579,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(0, 0, 0, 0.07);
 }
 
-/* line 373, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 388, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col1 {
   width: 50%;
   padding: 10px 15px 10px 0;
@@ -547,7 +589,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
-/* line 380, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 395, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col1 .bs2 {
   position: absolute;
   height: 100%;
@@ -557,12 +599,12 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: -1;
 }
 
-/* line 389, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 404, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col2 {
   width: 15%;
 }
 
-/* line 392, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 407, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col3 {
   width: 2%;
   padding: 0 30px 0;
@@ -571,19 +613,19 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 22px;
 }
 
-/* line 399, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 414, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col4 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 403, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 418, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col7 {
   width: 12%;
   padding-right: 15px;
 }
 
-/* line 407, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 422, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col5 {
   width: 2%;
   padding: 0 0 0 15px;
@@ -591,7 +633,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(0, 0, 0, 0.07);
 }
 
-/* line 413, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 428, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .quickresult__table .row3-qualifying__col6 {
   width: 12%;
   padding-right: 20px;
@@ -599,7 +641,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(0, 0, 0, 0.07);
 }
 
-/* line 423, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 438, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accordion {
   background-color: #262F30;
   color: #ffffff;
@@ -616,34 +658,34 @@ input[type=number]::-webkit-outer-spin-button {
   word-spacing: 70px;
 }
 
-/* line 439, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 454, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accrtable {
   float: right;
   border-collapse: collapse;
   font-size: 18px;
 }
 
-/* line 443, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 458, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accrtable tr {
   text-align: center;
 }
 
-/* line 445, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 460, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accrtable tr td {
   display: inline-block;
 }
 
-/* line 448, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 463, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accrtable tr td:nth-child(2) {
   padding: 0 33px;
 }
 
-/* line 451, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 466, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accrtable tr td:nth-child(3) {
   padding: 0 15px;
 }
 
-/* line 463, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 478, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .accordion:after {
   content: '\002B';
   color: #fff;
@@ -652,12 +694,12 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 5px;
 }
 
-/* line 471, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 486, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .active:after {
   content: "\2212";
 }
 
-/* line 475, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 490, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .mpanel {
   background-color: white;
   max-height: 0;
@@ -665,48 +707,48 @@ input[type=number]::-webkit-outer-spin-button {
   transition: max-height 0.2s ease-out;
 }
 
-/* line 483, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 498, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* line 488, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 503, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show tr th:nth-child(1), .moreresults__show tr td:nth-child(1) {
   text-align: left;
 }
 
-/* line 493, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 508, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row {
   text-align: center;
 }
 
-/* line 495, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 510, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row:nth-child(odd) {
   background: #CBE2E5;
 }
 
-/* line 498, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 513, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row:nth-child(even) {
   background: #F0F8FF;
 }
 
-/* line 501, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 516, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row .bold {
   font-weight: bold;
 }
 
-/* line 504, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 519, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row .whiteopacited {
   background: rgba(255, 255, 255, 0.22);
 }
 
-/* line 507, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 522, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row .blackopacited {
   background: rgba(0, 0, 0, 0.07);
 }
 
-/* line 511, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+/* line 526, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
 .moreresults__show--row-col {
   padding: 15px 15px;
 }
