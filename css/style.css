@@ -32,13 +32,6 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
-  /* line 4, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
-  .buttoncontainer {
-    display: -webkit-box;
-  }
-}
-
 /* line 8, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
 .buttoncontainer button {
   width: calc(100% / 3);

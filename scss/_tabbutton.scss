@@ -3,7 +3,7 @@
 }
 .buttoncontainer{
   @media screen and (max-width:400px) {
-    display: -webkit-box;
+    //display: -webkit-box;
   }
   button{
     width: calc(100% / 3);  
