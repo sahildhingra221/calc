@@ -23,7 +23,7 @@ input[type="text"]{
 @media screen and (max-width: 590px) {
   .input-group{
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 
