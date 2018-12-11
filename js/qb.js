@@ -5,26 +5,26 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
   var qblo = $('input[name=qblo]').val()-0;
   var qblc = $('input[name=qblc]').val()-0;
   
-  $(".fbbs").val(qbbs.toFixed(2));
+  $(".fbbs").val(qbbs);
   $(".fbbs").addClass("has-value");
-  $(".fbbo").val(qbbo.toFixed(2));
+  $(".fbbo").val(qbbo);
   $(".fbbo").addClass("has-value");
-  $(".fbbc").val(qbbc.toFixed(2));
+  $(".fbbc").val(qbbc);
   $(".fbbc").addClass("has-value");
-  $(".fblo").val(qblo.toFixed(2));
+  $(".fblo").val(qblo);
   $(".fblo").addClass("has-value");
-  $(".fblc").val(qblc.toFixed(2));
+  $(".fblc").val(qblc);
   $(".fblc").addClass("has-value");
   
-  $(".cbbs").val(qbbs.toFixed(2));
+  $(".cbbs").val(qbbs);
   $(".cbbs").addClass("has-value");
-  $(".cbbo").val(qbbo.toFixed(2));
+  $(".cbbo").val(qbbo);
   $(".cbbo").addClass("has-value");
-  $(".cbbc").val(qbbc.toFixed(2));
+  $(".cbbc").val(qbbc);
   $(".cbbc").addClass("has-value");
-  $(".cblo").val(qblo.toFixed(2));
+  $(".cblo").val(qblo);
   $(".cblo").addClass("has-value");
-  $(".cblc").val(qblc.toFixed(2));
+  $(".cblc").val(qblc);
   $(".cblc").addClass("has-value");
   
   if(qbbs != "" && qbbo != "" && qbbc != "" && qblo != "" && qblc != "") {
