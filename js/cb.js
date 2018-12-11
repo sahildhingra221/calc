@@ -6,6 +6,28 @@ $('input[name=cbbs], input[name=cbcs], input[name=cbbo], input[name=cbbc], input
   var cblo = $.trim( $('input[name=cblo]').val() );
   var cblc = $.trim( $('input[name=cblc]').val() );
   
+  $(".fbbs").val(cbbs);
+  $(".fbbs").addClass("has-value");
+  $(".fbbo").val(cbbo);
+  $(".fbbo").addClass("has-value");
+  $(".fbbc").val(cbbc);
+  $(".fbbc").addClass("has-value");
+  $(".fblo").val(cblo);
+  $(".fblo").addClass("has-value");
+  $(".fblc").val(cblc);
+  $(".fblc").addClass("has-value");
+  
+  $(".qbbs").val(cbbs);
+  $(".qbbs").addClass("has-value");
+  $(".qbbo").val(cbbo);
+  $(".qbbo").addClass("has-value");
+  $(".qbbc").val(cbbc);
+  $(".qbbc").addClass("has-value");
+  $(".qblo").val(cblo);
+  $(".qblo").addClass("has-value");
+  $(".qblc").val(cblc);
+  $(".qblc").addClass("has-value");
+  
   if(cbbs != "" && cbcs != "" && cbbo != "" && cbbc != "" && cblo != "" && cblc != "" && !(cbbs < 0) && !(cbcs < 0) && !(cbbo <= 0) && !(cbbc < 0) && !(cblo <= 0) && !(cblc < 0)) {
     if(cbbs < 0) {
       $(".cbbs").text("0");

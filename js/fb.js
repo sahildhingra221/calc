@@ -5,6 +5,28 @@ $('input[name=fbbs], input[name=fbbo], input[name=fbbc], input[name=fblo], input
   var fblo = $.trim( $('input[name=fblo]').val() );
   var fblc = $.trim( $('input[name=fblc]').val() );
   
+  $(".cbbs").val(fbbs);
+  $(".cbbs").addClass("has-value");
+  $(".cbbo").val(fbbo);
+  $(".cbbo").addClass("has-value");
+  $(".cbbc").val(fbbc);
+  $(".cbbc").addClass("has-value");
+  $(".cblo").val(fblo);
+  $(".cblo").addClass("has-value");
+  $(".cblc").val(fblc);
+  $(".cblc").addClass("has-value");
+  
+  $(".qbbs").val(fbbs);
+  $(".qbbs").addClass("has-value");
+  $(".qbbo").val(fbbo);
+  $(".qbbo").addClass("has-value");
+  $(".qbbc").val(fbbc);
+  $(".qbbc").addClass("has-value");
+  $(".qblo").val(fblo);
+  $(".qblo").addClass("has-value");
+  $(".qblc").val(fblc);
+  $(".qblc").addClass("has-value");
+  
   if(fbbs != "" && fbbo != "" && fbbc != "" && fblo != "" && fblc != "") {
     //Calculating Percentage
 

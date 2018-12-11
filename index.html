@@ -47,17 +47,17 @@
         <div class="panel-backbet__values panel-backbet__values--qualifying">
           <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="qbbs" id="qbbs" class="qbbs has-value">
+              <input type="text" name="qbbs" id="qbbs" class="qbbs">
               <label>Back stake</label>
             </div><br>
           </div>
           <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
             <div class="input-group">
-              <input type="text" name="qbbo" id="qbbo" class="qbbo has-value">
+              <input type="text" name="qbbo" id="qbbo" class="qbbo">
               <label>Back odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="qbbc" id="qbbc" class="qbbc has-value">
+              <input type="text" name="qbbc" id="qbbc" class="qbbc">
               <label>Back commission</label>
             </div>
           </div>
@@ -77,11 +77,11 @@
         <div class="panel-laybet__values panel-laybet__values--qualifying">
           <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="qblo" id="qblo" class="qblo has-value">
+              <input type="text" name="qblo" id="qblo" class="qblo">
               <label>Lay odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="qblc" id="qblc" class="qblc has-value">
+              <input type="text" name="qblc" id="qblc" class="qblc">
               <label>Lay commission</label>
             </div>
           </div>
@@ -232,14 +232,17 @@
      <!-- More Details Results -->
       <div class="moreresults moreresults__qualifying">
 
-      <button class="accordion">More Details/Results</button>
+      <button class="accordion">
+        <table class="accrtable">
+          <tr>
+            <td></td>
+            <td>Underlay</td>
+            <td>Overlay</td>
+          </tr>
+        </table>  
+      </button>
       <div class="mpanel">
         <table class="moreresults__show">
-          <tr class="moreresults__show--row moreresults__show--row1">
-            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
-          </tr>
           <tr class="moreresults__show--row moreresults__show--row2">
             <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
             <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="qbulsr" class="qbulsr">0.00</span></td>
@@ -290,17 +293,17 @@
         <div class="panel-backbet__values panel-backbet__values--qualifying">
           <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="fbbs" id="fbbs" class="fbbs has-value">
+              <input type="text" name="fbbs" id="fbbs" class="fbbs">
               <label>Back stake</label>
             </div><br>
           </div>
           <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
             <div class="input-group">
-              <input type="text" name="fbbo" id="fbbo" class="fbbo has-value">
+              <input type="text" name="fbbo" id="fbbo" class="fbbo">
               <label>Back odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="fbbc" id="fbbc" class="fbbc has-value">
+              <input type="text" name="fbbc" id="fbbc" class="fbbc">
               <label>Back commission</label>
             </div>
           </div>
@@ -320,11 +323,11 @@
         <div class="panel-laybet__values panel-laybet__values--qualifying">
           <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="fblo" id="fblo" class="fblo has-value">
+              <input type="text" name="fblo" id="fblo" class="fblo">
               <label>Lay odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="fblc" id="fblc" class="fblc has-value">
+              <input type="text" name="fblc" id="fblc" class="fblc">
               <label>Lay commission</label>
             </div>
           </div>
@@ -475,14 +478,17 @@
      <!-- More Details Results -->
       <div class="moreresults moreresults__qualifying">
 
-      <button class="accordion">More Details/Results</button>
+      <button class="accordion">
+        <table class="accrtable">
+          <tr>
+            <td></td>
+            <td>Underlay</td>
+            <td>Overlay</td>
+          </tr>
+        </table> 
+      </button>
       <div class="mpanel">
         <table class="moreresults__show">
-          <tr class="moreresults__show--row moreresults__show--row1">
-            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
-          </tr>
           <tr class="moreresults__show--row moreresults__show--row2">
             <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
             <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="fbulsr" class="fbulsr">0.00</span></td>
@@ -534,21 +540,21 @@
         <div class="panel-backbet__values panel-backbet__values--qualifying">
           <div class="panel-backbet__input-group-a panel-backbet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="cbbs" id="cbbs" class="cbbs has-value">
+              <input type="text" name="cbbs" id="cbbs" class="cbbs">
               <label>Back stake</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="cbcs" id="cbcs" class="cbcs has-value">
+              <input type="text" name="cbcs" id="cbcs" class="cbcs">
               <label>Cashback</label>
             </div>
           </div>
           <div class="panel-backbet__input-group-b panel-backbet__input-group-b--qualifying">
             <div class="input-group">
-              <input type="text" name="cbbo" id="cbbo" class="cbbo has-value">
+              <input type="text" name="cbbo" id="cbbo" class="cbbo">
               <label>Back odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="cbbc" id="cbbc" class="cbbc has-value">
+              <input type="text" name="cbbc" id="cbbc" class="cbbc">
               <label>Back commission</label>
             </div>
           </div>
@@ -568,11 +574,11 @@
         <div class="panel-laybet__values panel-laybet__values--qualifying">
           <div class="panel-laybet__input-group-a panel-laybet__input-group-a--qualifying">
             <div class="input-group">
-              <input type="text" name="cblo" id="cblo" class="cblo has-value">
+              <input type="text" name="cblo" id="cblo" class="cblo">
               <label>Lay odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="cblc" id="cblc" class="cblc has-value">
+              <input type="text" name="cblc" id="cblc" class="cblc">
               <label>Lay commission</label>
             </div>
           </div>
@@ -729,14 +735,17 @@
      <!-- More Details Results -->
       <div class="moreresults moreresults__qualifying">
 
-      <button class="accordion">More Details/Results</button>
+      <button class="accordion">
+        <table class="accrtable">
+          <tr>
+            <td></td>
+            <td>Underlay</td>
+            <td>Overlay</td>
+          </tr>
+        </table> 
+      </button>
       <div class="mpanel">
         <table class="moreresults__show">
-          <tr class="moreresults__show--row moreresults__show--row1">
-            <th class="moreresults__show--row-col moreresults__show--row1-col1" style="text-align: left;">Optimal</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col2">Underlay</th>
-            <th class="moreresults__show--row-col moreresults__show--row1-col3">Overlay</th>
-          </tr>
           <tr class="moreresults__show--row moreresults__show--row2">
             <td class="bold moreresults__show--row-col moreresults__show--row2-col1">Lay stake required</td>
             <td class="whiteopacited moreresults__show--row-col moreresults__show--row2-col2">&euro; <span id="cbulsr" class="cbulsr">0.00</span></td>
@@ -767,6 +776,7 @@
   </article>
   
 <script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/checkingfn.js"></script>
 <script src="js/tabswitch.js"></script>
 <script src="js/inputboxanimator.js"></script>
 <script src="js/accordian.js"></script>

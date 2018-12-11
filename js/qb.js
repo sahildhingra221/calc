@@ -6,16 +6,26 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
   var qblc = $('input[name=qblc]').val()-0;
   
   $(".fbbs").val(qbbs.toFixed(2));
+  $(".fbbs").addClass("has-value");
   $(".fbbo").val(qbbo.toFixed(2));
+  $(".fbbo").addClass("has-value");
   $(".fbbc").val(qbbc.toFixed(2));
+  $(".fbbc").addClass("has-value");
   $(".fblo").val(qblo.toFixed(2));
+  $(".fblo").addClass("has-value");
   $(".fblc").val(qblc.toFixed(2));
+  $(".fblc").addClass("has-value");
   
   $(".cbbs").val(qbbs.toFixed(2));
+  $(".cbbs").addClass("has-value");
   $(".cbbo").val(qbbo.toFixed(2));
+  $(".cbbo").addClass("has-value");
   $(".cbbc").val(qbbc.toFixed(2));
+  $(".cbbc").addClass("has-value");
   $(".cblo").val(qblo.toFixed(2));
+  $(".cblo").addClass("has-value");
   $(".cblc").val(qblc.toFixed(2));
+  $(".cblc").addClass("has-value");
   
   if(qbbs != "" && qbbo != "" && qbbc != "" && qblo != "" && qblc != "") {
     //Calculating Percentage
