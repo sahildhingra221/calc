@@ -18,7 +18,13 @@ body {
 .wrapper-body {
   max-width: 650px;
   margin: 70px auto 100px;
-  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 13, C:/Users/sahil/Desktop/Betting Calculator/scss/style.scss */
+  .wrapper-body {
+    max-width: 100%;
+  }
 }
 
 /* line 1, C:/Users/sahil/Desktop/Betting Calculator/scss/_tabbutton.scss */
