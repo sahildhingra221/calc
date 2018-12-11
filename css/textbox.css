@@ -10,15 +10,31 @@ input[type="text"]{
   font-size: 18px;
   display: inline-block;
 }
+@media screen and (max-width: 590px) {
+  input[type=text] {
+    width: 93%;
+  }
+}
 
 .input-group {
   display: inline-block;
   position: relative;
 }
+@media screen and (max-width: 590px) {
+  .input-group{
+    width: 100%;
+    margin-top: 15px;
+  }
+}
 
 .ig-rf{
   float: right;
   margin-right: 0;
+}
+@media screen and (max-width: 590px) {
+  .ig-rf{
+    float: inherit;
+  }
 }
 
 .input-group input {

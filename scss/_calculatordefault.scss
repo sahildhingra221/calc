@@ -27,9 +27,15 @@ input[type=number]::-webkit-outer-spin-button {
   }
   &__input-group-a{
     margin-top: 10px;
+    @media screen and (max-width: 590px) {
+      margin-top: 0;
+    }
   }
   &__input-group-b{
     margin-top: 30px;
+    @media screen and (max-width: 590px) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -43,6 +49,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   &__input-group-a{
     margin-top: 10px;
+    @media screen and (max-width: 590px) {
+      margin-top: 0;
+    }
   }
   &__buttons{
     padding: 25px 0 10px;
