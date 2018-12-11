@@ -336,7 +336,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media screen and (max-width: 460px) {
   /* line 183, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
   .panel-laybet__minmax--standard .standard {
-    padding-top: 14px;
+    padding-top: 12.5px;
     font-size: 16px;
   }
 }
