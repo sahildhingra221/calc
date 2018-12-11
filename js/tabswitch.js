@@ -3,8 +3,8 @@ var tabPanels=document.querySelectorAll(".tabpanel");
 
 function showPanel(panelIndex,colorCode) {
     tabbutton.forEach(function(node){
-        node.style.backgroundColor="";
-        node.style.color="";
+        node.style.backgroundColor="#262F30";
+        node.style.color="white";
         node.style.fontWeight="";
         node.style.border="0.5px solid white";
         node.style.borderBottom="0";

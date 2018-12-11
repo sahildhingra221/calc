@@ -19,7 +19,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .panel-backbet {
   background: #D7ECFA;
-  padding: 20px 22px 50px;
+  padding: 20px 22px 30px;
   &__title{
     font-weight: 500;
     font-size: 25px;
@@ -27,13 +27,14 @@ input[type=number]::-webkit-outer-spin-button {
   }
   &__input-group-a{
     margin-top: 10px;
-    @media screen and (max-width: 590px) {
+    @media screen and (max-width: 552px) {
       margin-top: 0;
+      
     }
   }
   &__input-group-b{
     margin-top: 30px;
-    @media screen and (max-width: 590px) {
+    @media screen and (max-width: 552px) {
       margin-top: 0;
     }
   }
@@ -49,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
   &__input-group-a{
     margin-top: 10px;
-    @media screen and (max-width: 590px) {
+    @media screen and (max-width: 552px) {
       margin-top: 0;
     }
   }
@@ -65,12 +66,23 @@ input[type=number]::-webkit-outer-spin-button {
         background: #FFBCCB;
         border-radius: 120px;
         padding:5px 25px;
+        @media screen and (max-width: 460px) {
+          display: block;
+          width: 100%;
+          margin-top: 10px;
+        }
       }
       .qboverlay, .fboverlay, .cboverlay{
         float: right;
+        @media screen and (max-width: 460px) {
+          float: inherit;
+        }
       }
       .qbunderlay, .fbunderlay, .cbunderlay{
         float: left;
+        @media screen and (max-width: 460px) {
+          float: inherit;
+        }
       }
     }
   }
@@ -107,7 +119,7 @@ input[type=number]::-webkit-outer-spin-button {
       .line{
         height: 7.5px;
         width: 1px;
-        margin-right: 1.91%;
+        margin: 0 0.925%;
         background-color: #262F30;
       }
       .l1, .l25, .l49{
@@ -228,14 +240,51 @@ input[type=number]::-webkit-outer-spin-button {
       background: #262F30;
       color: white;
       font-weight: 500;
+      width: 100%;
+      th,td{
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+          width: 18%;
+        }
+      }
     }
     &--row2{
       background: #F0F8FF;
       font-weight: 500;
+      td{
+        &:nth-child(1){
+          text-align: left;
+          padding-left: 15px;
+        }
+      }
+      th,td{
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+          width: 18%;
+        }
+      }
     }
     &--row3{
       background: #CBE2E5;
       font-weight: 500;
+      td{
+        &:nth-child(1){
+          text-align: left;
+          padding-left: 15px;
+        }
+      }
+      th,td{
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+          width: 18%;
+        }
+      }
     }
     .row1-qualifying{
       &__col1{
@@ -412,7 +461,15 @@ input[type=number]::-webkit-outer-spin-button {
   &__show{
     width: 100%;
     border-collapse: collapse;
+    tr{
+      th,td{
+        &:nth-child(1){
+          text-align: left;
+        }
+      }
+    }
     &--row {
+      text-align: center;
       &:nth-child(1) {
         background: #262F30!important;
         color: white;

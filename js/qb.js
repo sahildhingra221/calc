@@ -5,6 +5,18 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
   var qblo = $('input[name=qblo]').val()-0;
   var qblc = $('input[name=qblc]').val()-0;
   
+  $(".fbbs").val(qbbs.toFixed(2));
+  $(".fbbo").val(qbbo.toFixed(2));
+  $(".fbbc").val(qbbc.toFixed(2));
+  $(".fblo").val(qblo.toFixed(2));
+  $(".fblc").val(qblc.toFixed(2));
+  
+  $(".cbbs").val(qbbs.toFixed(2));
+  $(".cbbo").val(qbbo.toFixed(2));
+  $(".cbbc").val(qbbc.toFixed(2));
+  $(".cblo").val(qblo.toFixed(2));
+  $(".cblc").val(qblc.toFixed(2));
+  
   if(qbbs != "" && qbbo != "" && qbbc != "" && qblo != "" && qblc != "") {
     //Calculating Percentage
 

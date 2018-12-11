@@ -1,1 +1,698 @@
-*{font-family:roboto;margin:0;padding:0;-webkit-font-smoothing:antialiased}body{background-image:url(../media/Darkroad.png);background-position:center;background-repeat:no-repeat;background-size:cover}.wrapper-body{max-width:650px;margin:70px auto 100px}@media screen and (max-width: 650px){.wrapper-body{max-width:100%}}.tabbuttons{width:100%}.buttoncontainer button{width:calc(100% / 3);outline:none;border:none;float:left;font-size:20px;padding:15px 0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0}.tabpanel{width:100%}.panel__info{font-style:italic;margin-top:50px;font-size:16px}.panel-backbet{background:#D7ECFA;padding:20px 22px 50px}.panel-backbet__title{font-weight:500;font-size:25px;padding:10px 0}.panel-backbet__input-group-a{margin-top:10px}@media screen and (max-width: 590px){.panel-backbet__input-group-a{margin-top:0}}.panel-backbet__input-group-b{margin-top:30px}@media screen and (max-width: 590px){.panel-backbet__input-group-b{margin-top:0}}.panel-laybet{background:#FDDEE5;padding:20px 22px 30px}.panel-laybet__title{font-weight:500;font-size:25px;padding:10px 0}.panel-laybet__input-group-a{margin-top:10px}@media screen and (max-width: 590px){.panel-laybet__input-group-a{margin-top:0}}.panel-laybet__buttons{padding:25px 0 10px}.panel-laybet__buttons--wrap{text-align:center}.panel-laybet__buttons--wrap button{font-size:14px;font-weight:500;outline:none;border:none;background:#FFBCCB;border-radius:120px;padding:5px 25px}.panel-laybet__buttons--wrap .qboverlay,.panel-laybet__buttons--wrap .fboverlay,.panel-laybet__buttons--wrap .cboverlay{float:right}.panel-laybet__buttons--wrap .qbunderlay,.panel-laybet__buttons--wrap .fbunderlay,.panel-laybet__buttons--wrap .cbunderlay{float:left}.panel-laybet__slider--bar input{-webkit-appearance:none;width:100%;height:6px;border-radius:5px;border:0;background:#262F30;margin-top:15px}.panel-laybet__slider--bar input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;background:#fff}.panel-laybet__slider--bar input::-moz-range-thumb{width:25px;height:25px;border-radius:50%;background:#fff}.panel-laybet__slider--scale{display:-webkit-box;width:100%;margin-top:10px}.panel-laybet__slider--scale .line{height:7.5px;width:1px;margin-right:1.91%;background-color:#262F30}.panel-laybet__slider--scale .l1,.panel-laybet__slider--scale .l25,.panel-laybet__slider--scale .l49{height:20px;width:2px}.panel-laybet__minmax{margin-top:10px;display:-webkit-box;font-size:20px;width:100%}.panel-laybet__minmax--min{width:calc(100% / 3)}.panel-laybet__minmax--min .min{width:115px;display:-webkit-box;padding:10px;background:#FFBCCB;border-radius:7px;font-weight:400}.panel-laybet__minmax--min .min__value input{border:none;background:#FFBCCB;font-size:20px;width:55px;margin-left:10px}.panel-laybet__minmax--standard{width:calc(100% / 3);text-align:center}.panel-laybet__minmax--standard .standard{padding-top:10px;font-size:20px}.panel-laybet__minmax--max{width:calc(100% / 3);position:relative}.panel-laybet__minmax--max .max{position:absolute;right:0;width:115px;display:-webkit-box;padding:10px;background:#FFBCCB;border-radius:7px;font-weight:400}.panel-laybet__minmax--max .max__value input{border:none;background:#FFBCCB;font-size:20px;width:55px;margin-left:10px}.laystake-val{background:#262F30;color:white;font-weight:500;font-size:20px;text-align:center;padding:15px 0;position:relative}.laystake-val:after{bottom:100%;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(38,47,48,0);border-bottom-color:#262F30;border-width:18px;margin-left:-18px}.quickresult{margin-top:15px}.quickresult .cbcalc .rm-padding{padding:0 15px}.quickresult .cbcalc .in-width{width:25%}.quickresult .cbcalc .divide-padding{padding:0 7.5px}.quickresult .cbcalc .rm-extra{padding-right:0}.quickresult .cbcalc .align-center{padding-right:0;text-align:left}.quickresult__table{border-collapse:collapse;text-align:right;width:100%}.quickresult__table--row1{background:#262F30;color:white;font-weight:500}.quickresult__table--row2{background:#F0F8FF;font-weight:500}.quickresult__table--row3{background:#CBE2E5;font-weight:500}.quickresult__table .row1-qualifying__col1{width:40%;padding:25px 0}.quickresult__table .row1-qualifying__col2{width:15%}.quickresult__table .row1-qualifying__col3{width:2%;padding:0 30px;text-align:center;color:#E6B051;font-weight:lighter;font-size:22px}.quickresult__table .row1-qualifying__col4{width:12%;padding-right:15px}.quickresult__table .row1-qualifying__col7{width:12%;padding-right:15px}.quickresult__table .row1-qualifying__col5{width:2%;padding:0 0 0 15px;color:#E6B051;font-weight:lighter}.quickresult__table .row1-qualifying__col6{width:12%;padding-right:20px}.quickresult__table .row2-qualifying__col1{width:50%;padding:10px 25px 10px 0;font-size:20px;background:#D7ECFA;border-radius:0 25px 25px 0;position:relative}.quickresult__table .row2-qualifying__col1 .bs{position:absolute;height:100%;width:100%;top:0;background:#F0F8FF;z-index:-1}.quickresult__table .row2-qualifying__col2{width:15%}.quickresult__table .row2-qualifying__col3{width:2%;padding:0 30px 0;text-align:center;color:#262F30;font-size:22px}.quickresult__table .row2-qualifying__col4{width:12%;padding-right:15px}.quickresult__table .row2-qualifying__col7{width:12%;padding-right:15px}.quickresult__table .row2-qualifying__col5{width:2%;padding:0 0 0 15px;color:#262F30;background:rgba(0,0,0,0.07)}.quickresult__table .row2-qualifying__col6{width:12%;padding-right:20px;font-weight:600;background:rgba(0,0,0,0.07)}.quickresult__table .row3-qualifying__col1{width:50%;padding:10px 15px 10px 0;font-size:20px;background:#FDDEE5;border-radius:0 25px 25px 0;position:relative}.quickresult__table .row3-qualifying__col1 .bs2{position:absolute;height:100%;width:100%;top:0;background:#CBE2E5;z-index:-1}.quickresult__table .row3-qualifying__col2{width:15%}.quickresult__table .row3-qualifying__col3{width:2%;padding:0 30px 0;text-align:center;color:#262F30;font-size:22px}.quickresult__table .row3-qualifying__col4{width:12%;padding-right:15px}.quickresult__table .row3-qualifying__col7{width:12%;padding-right:15px}.quickresult__table .row3-qualifying__col5{width:2%;padding:0 0 0 15px;color:#262F30;background:rgba(0,0,0,0.07)}.quickresult__table .row3-qualifying__col6{width:12%;padding-right:20px;font-weight:600;background:rgba(0,0,0,0.07)}.accordion{background-color:#262F30;color:#ffffff;cursor:pointer;padding:18px;width:100%;border:none;text-align:left;outline:none;font-size:15px;transition:0.4s;margin-top:15px}.accordion:after{content:'\002B';color:#fff;font-weight:bold;float:right;margin-left:5px}.active:after{content:"\2212"}.mpanel{background-color:white;max-height:0;overflow:hidden;transition:max-height 0.2s ease-out}.moreresults__show{width:100%;border-collapse:collapse}.moreresults__show--row:nth-child(1){background:#262F30 !important;color:white;border-top:0.5px solid lightgrey}.moreresults__show--row:nth-child(odd){background:#CBE2E5}.moreresults__show--row:nth-child(even){background:#F0F8FF}.moreresults__show--row .bold{font-weight:bold}.moreresults__show--row .whiteopacited{background:rgba(255,255,255,0.22)}.moreresults__show--row .blackopacited{background:rgba(0,0,0,0.07)}.moreresults__show--row-col{padding:15px 15px}
+/* line 1, C:/Users/sahil/Documents/GitHub/calc/scss/style.scss */
+* {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 7, C:/Users/sahil/Documents/GitHub/calc/scss/style.scss */
+body {
+  background-image: url(../media/Darkroad.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 13, C:/Users/sahil/Documents/GitHub/calc/scss/style.scss */
+.wrapper-body {
+  max-width: 552px;
+  margin: 70px auto 100px;
+}
+
+@media screen and (max-width: 552px) {
+  /* line 13, C:/Users/sahil/Documents/GitHub/calc/scss/style.scss */
+  .wrapper-body {
+    max-width: 100%;
+  }
+}
+
+/* line 1, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
+.tabbuttons {
+  width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  /* line 4, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
+  .buttoncontainer {
+    display: -webkit-box;
+  }
+}
+
+/* line 8, C:/Users/sahil/Documents/GitHub/calc/scss/_tabbutton.scss */
+.buttoncontainer button {
+  width: calc(100% / 3);
+  outline: none;
+  border: none;
+  float: left;
+  font-size: 20px;
+  padding: 15px 0;
+}
+
+/* line 1, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* line 8, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.tabpanel {
+  width: 100%;
+}
+
+/* line 13, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel__info {
+  font-style: italic;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+/* line 20, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-backbet {
+  background: #D7ECFA;
+  padding: 20px 22px 30px;
+}
+
+/* line 23, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-backbet__title {
+  font-weight: 500;
+  font-size: 25px;
+  padding: 10px 0;
+}
+
+/* line 28, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-backbet__input-group-a {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 552px) {
+  /* line 28, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-backbet__input-group-a {
+    margin-top: 0;
+  }
+}
+
+/* line 35, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-backbet__input-group-b {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 552px) {
+  /* line 35, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-backbet__input-group-b {
+    margin-top: 0;
+  }
+}
+
+/* line 43, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet {
+  background: #FDDEE5;
+  padding: 20px 22px 30px;
+}
+
+/* line 46, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__title {
+  font-weight: 500;
+  font-size: 25px;
+  padding: 10px 0;
+}
+
+/* line 51, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__input-group-a {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 552px) {
+  /* line 51, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__input-group-a {
+    margin-top: 0;
+  }
+}
+
+/* line 57, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__buttons {
+  padding: 25px 0 10px;
+}
+
+/* line 59, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__buttons--wrap {
+  text-align: center;
+}
+
+/* line 61, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__buttons--wrap button {
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  background: #FFBCCB;
+  border-radius: 120px;
+  padding: 5px 25px;
+}
+
+@media screen and (max-width: 460px) {
+  /* line 61, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__buttons--wrap button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* line 75, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__buttons--wrap .qboverlay, .panel-laybet__buttons--wrap .fboverlay, .panel-laybet__buttons--wrap .cboverlay {
+  float: right;
+}
+
+@media screen and (max-width: 460px) {
+  /* line 75, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__buttons--wrap .qboverlay, .panel-laybet__buttons--wrap .fboverlay, .panel-laybet__buttons--wrap .cboverlay {
+    float: inherit;
+  }
+}
+
+/* line 81, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__buttons--wrap .qbunderlay, .panel-laybet__buttons--wrap .fbunderlay, .panel-laybet__buttons--wrap .cbunderlay {
+  float: left;
+}
+
+@media screen and (max-width: 460px) {
+  /* line 81, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+  .panel-laybet__buttons--wrap .qbunderlay, .panel-laybet__buttons--wrap .fbunderlay, .panel-laybet__buttons--wrap .cbunderlay {
+    float: inherit;
+  }
+}
+
+/* line 91, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--bar input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  border: 0;
+  background: #262F30;
+  margin-top: 15px;
+}
+
+/* line 100, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--bar input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* line 108, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--bar input::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* line 115, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--scale {
+  display: -webkit-box;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* line 119, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--scale .line {
+  height: 7.5px;
+  width: 1px;
+  margin: 0 0.925%;
+  background-color: #262F30;
+}
+
+/* line 125, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__slider--scale .l1, .panel-laybet__slider--scale .l25, .panel-laybet__slider--scale .l49 {
+  height: 20px;
+  width: 2px;
+}
+
+/* line 131, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax {
+  margin-top: 10px;
+  display: -webkit-box;
+  font-size: 20px;
+  width: 100%;
+}
+
+/* line 136, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--min {
+  width: calc(100% / 3);
+}
+
+/* line 138, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--min .min {
+  width: 115px;
+  display: -webkit-box;
+  padding: 10px;
+  background: #FFBCCB;
+  border-radius: 7px;
+  font-weight: 400;
+}
+
+/* line 146, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--min .min__value input {
+  border: none;
+  background: #FFBCCB;
+  font-size: 20px;
+  width: 55px;
+  margin-left: 10px;
+}
+
+/* line 156, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--standard {
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+/* line 159, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--standard .standard {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+/* line 164, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--max {
+  width: calc(100% / 3);
+  position: relative;
+}
+
+/* line 167, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--max .max {
+  position: absolute;
+  right: 0;
+  width: 115px;
+  display: -webkit-box;
+  padding: 10px;
+  background: #FFBCCB;
+  border-radius: 7px;
+  font-weight: 400;
+}
+
+/* line 177, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.panel-laybet__minmax--max .max__value input {
+  border: none;
+  background: #FFBCCB;
+  font-size: 20px;
+  width: 55px;
+  margin-left: 10px;
+}
+
+/* line 191, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.laystake-val {
+  background: #262F30;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+}
+
+/* line 199, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.laystake-val:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(38, 47, 48, 0);
+  border-bottom-color: #262F30;
+  border-width: 18px;
+  margin-left: -18px;
+}
+
+/* line 215, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult {
+  margin-top: 15px;
+}
+
+/* line 218, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult .cbcalc .rm-padding {
+  padding: 0 15px;
+}
+
+/* line 221, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult .cbcalc .in-width {
+  width: 25%;
+}
+
+/* line 224, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult .cbcalc .divide-padding {
+  padding: 0 7.5px;
+}
+
+/* line 227, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult .cbcalc .rm-extra {
+  padding-right: 0;
+}
+
+/* line 230, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult .cbcalc .align-center {
+  padding-right: 0;
+  text-align: left;
+}
+
+/* line 235, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table {
+  border-collapse: collapse;
+  text-align: right;
+  width: 100%;
+}
+
+/* line 239, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row1 {
+  background: #262F30;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* line 245, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row1 th:nth-child(1), .quickresult__table--row1 td:nth-child(1) {
+  width: 35%;
+}
+
+/* line 248, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row1 th:nth-child(2), .quickresult__table--row1 th:nth-child(4), .quickresult__table--row1 th:nth-child(6), .quickresult__table--row1 td:nth-child(2), .quickresult__table--row1 td:nth-child(4), .quickresult__table--row1 td:nth-child(6) {
+  width: 18%;
+}
+
+/* line 253, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row2 {
+  background: #F0F8FF;
+  font-weight: 500;
+}
+
+/* line 257, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row2 td:nth-child(1) {
+  text-align: left;
+  padding-left: 15px;
+}
+
+/* line 263, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row2 th:nth-child(1), .quickresult__table--row2 td:nth-child(1) {
+  width: 35%;
+}
+
+/* line 266, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row2 th:nth-child(2), .quickresult__table--row2 th:nth-child(4), .quickresult__table--row2 th:nth-child(6), .quickresult__table--row2 td:nth-child(2), .quickresult__table--row2 td:nth-child(4), .quickresult__table--row2 td:nth-child(6) {
+  width: 18%;
+}
+
+/* line 271, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row3 {
+  background: #CBE2E5;
+  font-weight: 500;
+}
+
+/* line 275, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row3 td:nth-child(1) {
+  text-align: left;
+  padding-left: 15px;
+}
+
+/* line 281, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row3 th:nth-child(1), .quickresult__table--row3 td:nth-child(1) {
+  width: 35%;
+}
+
+/* line 284, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table--row3 th:nth-child(2), .quickresult__table--row3 th:nth-child(4), .quickresult__table--row3 th:nth-child(6), .quickresult__table--row3 td:nth-child(2), .quickresult__table--row3 td:nth-child(4), .quickresult__table--row3 td:nth-child(6) {
+  width: 18%;
+}
+
+/* line 290, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col1 {
+  width: 40%;
+  padding: 25px 0;
+}
+
+/* line 294, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col2 {
+  width: 15%;
+}
+
+/* line 297, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col3 {
+  width: 2%;
+  padding: 0 30px;
+  text-align: center;
+  color: #E6B051;
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+/* line 305, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col4 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 309, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col7 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 313, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col5 {
+  width: 2%;
+  padding: 0 0 0 15px;
+  color: #E6B051;
+  font-weight: lighter;
+}
+
+/* line 319, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row1-qualifying__col6 {
+  width: 12%;
+  padding-right: 20px;
+}
+
+/* line 325, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col1 {
+  width: 50%;
+  padding: 10px 25px 10px 0;
+  font-size: 20px;
+  background: #D7ECFA;
+  border-radius: 0 25px 25px 0;
+  position: relative;
+}
+
+/* line 332, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col1 .bs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: #F0F8FF;
+  z-index: -1;
+}
+
+/* line 341, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col2 {
+  width: 15%;
+}
+
+/* line 344, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col3 {
+  width: 2%;
+  padding: 0 30px 0;
+  text-align: center;
+  color: #262F30;
+  font-size: 22px;
+}
+
+/* line 351, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col4 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 355, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col7 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 359, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col5 {
+  width: 2%;
+  padding: 0 0 0 15px;
+  color: #262F30;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 365, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row2-qualifying__col6 {
+  width: 12%;
+  padding-right: 20px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 373, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col1 {
+  width: 50%;
+  padding: 10px 15px 10px 0;
+  font-size: 20px;
+  background: #FDDEE5;
+  border-radius: 0 25px 25px 0;
+  position: relative;
+}
+
+/* line 380, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col1 .bs2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: #CBE2E5;
+  z-index: -1;
+}
+
+/* line 389, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col2 {
+  width: 15%;
+}
+
+/* line 392, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col3 {
+  width: 2%;
+  padding: 0 30px 0;
+  text-align: center;
+  color: #262F30;
+  font-size: 22px;
+}
+
+/* line 399, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col4 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 403, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col7 {
+  width: 12%;
+  padding-right: 15px;
+}
+
+/* line 407, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col5 {
+  width: 2%;
+  padding: 0 0 0 15px;
+  color: #262F30;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 413, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.quickresult__table .row3-qualifying__col6 {
+  width: 12%;
+  padding-right: 20px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 423, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.accordion {
+  background-color: #262F30;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 15px;
+}
+
+/* line 441, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 449, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.active:after {
+  content: "\2212";
+}
+
+/* line 453, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.mpanel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* line 461, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* line 466, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show tr th:nth-child(1), .moreresults__show tr td:nth-child(1) {
+  text-align: left;
+}
+
+/* line 471, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row {
+  text-align: center;
+}
+
+/* line 473, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row:nth-child(1) {
+  background: #262F30 !important;
+  color: white;
+  border-top: 0.5px solid lightgrey;
+}
+
+/* line 478, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row:nth-child(odd) {
+  background: #CBE2E5;
+}
+
+/* line 481, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row:nth-child(even) {
+  background: #F0F8FF;
+}
+
+/* line 484, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row .bold {
+  font-weight: bold;
+}
+
+/* line 487, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row .whiteopacited {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* line 490, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row .blackopacited {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 494, C:/Users/sahil/Documents/GitHub/calc/scss/_calculatordefault.scss */
+.moreresults__show--row-col {
+  padding: 15px 15px;
+}
+
+/*# sourceMappingURL=../css/style.map */
