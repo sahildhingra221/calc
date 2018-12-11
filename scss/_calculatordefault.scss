@@ -157,6 +157,10 @@ input[type=number]::-webkit-outer-spin-button {
         background: #FFBCCB;
         border-radius: 7px;
         font-weight: 400;
+        @media screen and (max-width:460px) {
+          width: 90px;
+          font-size: 16px;
+        }
         &__value{
           input{
             border: none;
@@ -164,6 +168,11 @@ input[type=number]::-webkit-outer-spin-button {
             font-size: 18px;
             width: 55px;
             margin-left: 10px;
+            @media screen and (max-width:460px) {
+              width: 45px;
+              margin-left: 5px;
+              font-size: 16px;
+            }
           }
         }
       }
@@ -174,6 +183,10 @@ input[type=number]::-webkit-outer-spin-button {
       .standard{
         padding-top: 10px;
         font-size: 20px;
+        @media screen and (max-width:460px) {
+          padding-top: 14px;
+          font-size: 16px;
+        }
       }
     }
     &--max{
@@ -188,6 +201,10 @@ input[type=number]::-webkit-outer-spin-button {
         background: #FFBCCB;
         border-radius: 7px;
         font-weight: 400;
+        @media screen and (max-width:460px) {
+          width: 90px;
+          font-size: 16px;
+        }
         &__value{
           input{
             border: none;
@@ -195,6 +212,11 @@ input[type=number]::-webkit-outer-spin-button {
             font-size: 18px;
             width: 55px;
             margin-left: 10px;
+            @media screen and (max-width:460px) {
+              width: 45px;
+              margin-left: 5px;
+              font-size: 16px;
+            }
           }
         }
       }
