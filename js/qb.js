@@ -280,8 +280,17 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
         var qbslidermin = qblsr - qbslidermid; 
         var qbslidermax = qblsr + qbslidermid; 
 
-        $(".qbmin").val(qbslidermin.toFixed(2));
-        $(".qbmax").val(qbslidermax.toFixed(2));
+        if(qbslidermin > qbslidermax) {
+          var tmp;
+          tmp = qbslidermin;
+          qbslidermin = qbslidermax;
+          qbslidermax = tmp;
+          $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+           $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        }
 
         document.getElementById("qbslider").min = qbslidermin;
         document.getElementById("qbslider").max = qbslidermax;
