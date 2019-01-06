@@ -75,13 +75,13 @@ function qbOverlay() {
 
     $(".qbbb").text(qbobb.toFixed(2));
     $(".qbbe").text(qbobe.toFixed(2));
-    $(".qbbt").text(qbobt.toFixed(2));
+    $(".qbbt").text(qbolt.toFixed(2));
 
     //Lay
 
     $(".qblb").text(qbolb.toFixed(2));
     $(".qble").text(qbole.toFixed(2));
-    $(".qblt").text(qbolt.toFixed(2));
+    $(".qblt").text(qbobt.toFixed(2));
     
     //Underlay
     
@@ -116,13 +116,13 @@ function qbOverlay() {
 
       $(".qbbb").text(qbubb.toFixed(2));
       $(".qbbe").text(qbube.toFixed(2));
-      $(".qbbt").text(qbubt.toFixed(2));
+      $(".qbbt").text(qbult.toFixed(2));
 
       //Lay
 
       $(".qblb").text(qbulb.toFixed(2));
       $(".qble").text(qbule.toFixed(2));
-      $(".qblt").text(qbult.toFixed(2));
+      $(".qblt").text(qbubt.toFixed(2));
       //Underlay
     
       $(".qbulsr").text(qbolsr.toFixed(2));
@@ -139,15 +139,30 @@ function qbOverlay() {
     
       //Range Slider
 
-      var qbslidermid = (qblsr - qbulsr) - (35 / 100);
-      var qbslidermin = qblsr + qbslidermid; 
-      var qbslidermax = qblsr - qbslidermid; 
-    
-      $(".qbmin").val(qbslidermin.toFixed(2));
-      $(".qbmax").val(qbslidermax.toFixed(2));
+        if((qblsr - qbulsr) > (qblsr - qbolsr)) {
+          var qbslidermid = (qblsr - qbulsr) + (23 / 100);
+          var qbslidermin = qblsr - qbslidermid; 
+          var qbslidermax = qblsr + qbslidermid;  $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+          var qbslidermid = (qbolsr - qblsr) - (23 / 100);
+        var qbslidermin = qblsr - qbslidermid; 
+        var qbslidermax = qblsr + qbslidermid; 
+        if(qbslidermin > qbslidermax) {
+          var tmp;
+          tmp = qbslidermin;
+          qbslidermin = qbslidermax;
+          qbslidermax = tmp;
+          $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+           $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        }
+        }
 
       document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;
-      document.getElementById("qbslider").value = qbulsr;
+      document.getElementById("qbslider").value = qbolsr;
   }
 }

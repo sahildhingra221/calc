@@ -127,12 +127,27 @@ function qbStandard() {
     
       //Range Slider
 
-      var qbslidermid = (qbulsr - qblsr) + (35 / 100);
-      var qbslidermin = qblsr - qbslidermid; 
-      var qbslidermax = qblsr + qbslidermid; 
-    
-      $(".qbmin").val(qbslidermin.toFixed(2));
-      $(".qbmax").val(qbslidermax.toFixed(2));
+        if((qblsr - qbulsr) > (qblsr - qbolsr)) {
+          var qbslidermid = (qblsr - qbulsr) + (23 / 100);
+          var qbslidermin = qblsr - qbslidermid; 
+          var qbslidermax = qblsr + qbslidermid;  $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+          var qbslidermid = (qbolsr - qblsr) - (23 / 100);
+        var qbslidermin = qblsr - qbslidermid; 
+        var qbslidermax = qblsr + qbslidermid; 
+        if(qbslidermin > qbslidermax) {
+          var tmp;
+          tmp = qbslidermin;
+          qbslidermin = qbslidermax;
+          qbslidermax = tmp;
+          $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+           $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        }
+        }
 
       document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;

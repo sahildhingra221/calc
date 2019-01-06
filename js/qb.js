@@ -223,13 +223,13 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
 
     $(".qbbb").text(qbbb.toFixed(2));
     $(".qbbe").text(qbbe.toFixed(2));
-    $(".qbbt").text(qbbt.toFixed(2));
+    $(".qbbt").text(qblt.toFixed(2));
 
     //Lay
 
     $(".qblb").text(qblb.toFixed(2));
     $(".qble").text(qble.toFixed(2));
-    $(".qblt").text(qblt.toFixed(2));  
+    $(".qblt").text(qbbt.toFixed(2));  
 
     if(qbbo <= qblo) {
       //Underlay
@@ -276,10 +276,19 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
 
         //Range Slider
 
-        var qbslidermid = (qbulsr - qblsr) + (35 / 100);
+        //var qbslidermid = (qbulsr - qblsr) + (35 / 100);
+        //var qbslidermin = qblsr - qbslidermid; 
+        //var qbslidermax = qblsr + qbslidermid; 
+        
+        if((qblsr - qbulsr) > (qblsr - qbolsr)) {
+          var qbslidermid = (qblsr - qbulsr) + (23 / 100);
+          var qbslidermin = qblsr - qbslidermid; 
+          var qbslidermax = qblsr + qbslidermid;  $(".qbmin").val(qbslidermin.toFixed(2));
+          $(".qbmax").val(qbslidermax.toFixed(2));
+        } else {
+          var qbslidermid = (qbolsr - qblsr) - (23 / 100);
         var qbslidermin = qblsr - qbslidermid; 
         var qbslidermax = qblsr + qbslidermid; 
-
         if(qbslidermin > qbslidermax) {
           var tmp;
           tmp = qbslidermin;
@@ -290,6 +299,7 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
         } else {
            $(".qbmin").val(qbslidermin.toFixed(2));
           $(".qbmax").val(qbslidermax.toFixed(2));
+        }
         }
 
         document.getElementById("qbslider").min = qbslidermin;
