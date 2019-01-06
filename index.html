@@ -12,7 +12,7 @@
 <body>
 
   <header class="hero-header">
-    <div class="verinfo" style="color: white; background: rgba(0,0,0,0.85); position: absolute; top: 0;">Ver: 0.1.7</div>
+    <div class="verinfo" style="color: white; background: rgba(0,0,0,0.85); position: absolute; top: 0;">Ver: 1.1.1</div>
   </header>
 
   <article class="wrapper-body">
@@ -57,7 +57,7 @@
               <label>Back odds (decimal)</label>
             </div>
             <div class="input-group ig-rf">
-              <input type="text" name="qbbc" id="qbbc" class="qbbc">
+              <input class="has-value" type="text" name="qbbc" id="qbbc" class="qbbc" value="0">
               <label>Back commission</label>
             </div>
           </div>
@@ -101,7 +101,7 @@
           
            <!-- Slider Bar -->
             <div class="panel-laybet__slider--bar panel-laybet__slider--bar-qualifying">
-              <input type="range" name="qbslider" id="qbslider" class="qbslider" step="0.01" oninput="qbSlider(this.value,'qbbs','qbbo','qbbc','qblo','qblc')">
+              <input type="range" name="qbslider" id="qbslider" class="qbslider" step="0.0001" oninput="qbSlider(this.value,'qbbs','qbbo','qbbc','qblo','qblc')">
             </div>
             
            <!-- Slider Scale -->

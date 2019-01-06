@@ -1,9 +1,9 @@
 $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input[name=qblc]').keyup(function() {
-  var qbbs = $('input[name=qbbs]').val()-0;
-  var qbbo = $('input[name=qbbo]').val()-0;
-  var qbbc = $('input[name=qbbc]').val()-0;
-  var qblo = $('input[name=qblo]').val()-0;
-  var qblc = $('input[name=qblc]').val()-0;
+  var qbbs = $.trim( $('input[name=qbbs]').val() );
+  var qbbo = $.trim( $('input[name=qbbo]').val() );
+  var qbbc = $.trim( $('input[name=qbbc]').val() );
+  var qblo = $.trim( $('input[name=qblo]').val() );
+  var qblc = $.trim( $('input[name=qblc]').val() );
   
   var fbbs = qbbs;
   var fbbo = qbbo;
@@ -153,7 +153,7 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
   
   }
   
-  if(qbbs != "" && qbbo != "" && qbbc != "" && qblo != "" && qblc != "") {
+  if(qbbs != "" && qbbo != "" && qbbc != "" && qblo != "" && qblc != "" && !(qbbs < 0) && !(qbbo <= 0) && !(qbbc < 0) && !(qblo <= 0) && !(qblc < 0)) {
     //Calculating Percentage
 
     var qbbcp = qbbc / 100;
@@ -288,7 +288,41 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
         document.getElementById("qbslider").value = qblsr;
     }
   } else {
-    document.getElementById("qblsr").innerHTML = parseFloat(0.00).toFixed(2);
+    var zero = 0;
+      document.getElementById("cblsr").innerHTML = parseFloat(zero).toFixed(2);   $(".cbstandardvalfix").text(zero.toFixed(2));
+      $(".cblsr").text(zero.toFixed(2));
+
+      //Graph
+      //Back
+
+      $(".cbbb").text(zero.toFixed(2));
+      $(".cbbe").text(zero.toFixed(2));
+      $(".cbbcs").text(zero.toFixed(2));
+      $(".cbbt").text(zero.toFixed(2));
+
+      //Lay
+
+      $(".cblb").text(zero.toFixed(2));
+      $(".cble").text(zero.toFixed(2));
+      $(".cblcs").text(zero.toFixed(2));
+      $(".cblt").text(zero.toFixed(2));  
+
+      //Underlay
+
+      $(".cbulsr").text(zero.toFixed(2));
+      $(".cbutel").text(zero.toFixed(2));
+      $(".cbubw").text(zero.toFixed(2));
+      $(".cbulw").text(zero.toFixed(2));
+
+      //Overlay
+
+      $(".cbolsr").text(zero.toFixed(2));
+      $(".cbotel").text(zero.toFixed(2));
+      $(".cbobw").text(zero.toFixed(2));
+      $(".cbolw").text(zero.toFixed(2));
+
+      $(".cbmin").val(zero.toFixed(2));
+      $(".cbmax").val(zero.toFixed(2));
   }
   
   
