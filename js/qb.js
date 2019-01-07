@@ -223,13 +223,13 @@ $('input[name=qbbs], input[name=qbbo], input[name=qbbc], input[name=qblo], input
 
     $(".qbbb").text(qbbb.toFixed(2));
     $(".qbbe").text(qbbe.toFixed(2));
-    $(".qbbt").text(qblt.toFixed(2));
+    $(".qbbt").text(qbbt.toFixed(2));
 
     //Lay
 
     $(".qblb").text(qblb.toFixed(2));
     $(".qble").text(qble.toFixed(2));
-    $(".qblt").text(qbbt.toFixed(2));  
+    $(".qblt").text(qblt.toFixed(2));  
 
     if(qbbo <= qblo) {
       //Underlay

@@ -116,13 +116,13 @@ function qbUnderlay() {
 
       $(".qbbb").text(qbobb.toFixed(2));
       $(".qbbe").text(qbobe.toFixed(2));
-      $(".qbbt").text(qbolt.toFixed(2));
+      $(".qbbt").text(qbobt.toFixed(2));
 
       //Lay
 
       $(".qblb").text(qbolb.toFixed(2));
       $(".qble").text(qbole.toFixed(2));
-      $(".qblt").text(qbobt.toFixed(2));
+      $(".qblt").text(qbolt.toFixed(2));
       //Underlay
     
       $(".qbulsr").text(qbolsr.toFixed(2));
