@@ -67,7 +67,7 @@ function qbUnderlay() {
   //Lay Stake Required and Standard Value
   
   $(".qbstandardvalfix").text(qblsr.toFixed(2));
-  $(".qblsr").text(qbulsr.toFixed(2));  
+  $(".qblsr").text(qbolsr.toFixed(2));  
   
   if(qbbo <= qblo) {
     //Graph
@@ -145,7 +145,7 @@ function qbUnderlay() {
           var qbslidermax = qblsr + qbslidermid;  $(".qbmin").val(qbslidermin.toFixed(2));
           $(".qbmax").val(qbslidermax.toFixed(2)); document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;
-      document.getElementById("qbslider").value = qbulsr;
+      document.getElementById("qbslider").value = qbolsr;
         } else {
           var qbslidermid = (qbolsr - qblsr) - (23 / 100);
         var qbslidermin = qblsr - qbslidermid; 
@@ -158,12 +158,12 @@ function qbUnderlay() {
           $(".qbmin").val(qbslidermin.toFixed(2));
           $(".qbmax").val(qbslidermax.toFixed(2)); document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;
-      document.getElementById("qbslider").value = qbulsr;
+      document.getElementById("qbslider").value = qbolsr;
         } else {
            $(".qbmin").val(qbslidermin.toFixed(2));
           $(".qbmax").val(qbslidermax.toFixed(2)); document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;
-      document.getElementById("qbslider").value = qbulsr;
+      document.getElementById("qbslider").value = qbolsr;
         }
         }
 

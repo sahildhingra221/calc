@@ -67,7 +67,7 @@ function qbOverlay() {
   //Lay Stake Required and Standard Value
   
   $(".qbstandardvalfix").text(qblsr.toFixed(2));
-  $(".qblsr").text(qbolsr.toFixed(2));  
+  $(".qblsr").text(qbulsr.toFixed(2));  
   
   if(qbbo <= qblo) {
     //Graph
@@ -108,7 +108,7 @@ function qbOverlay() {
     
     document.getElementById("qbslider").min = qbslidermin;
     document.getElementById("qbslider").max = qbslidermax;
-    document.getElementById("qbslider").value = qbolsr;
+    document.getElementById("qbslider").value = qbulsr;
     
   } else if(qbbo > qblo) {
       //Graph
@@ -163,6 +163,6 @@ function qbOverlay() {
 
       document.getElementById("qbslider").min = qbslidermin;
       document.getElementById("qbslider").max = qbslidermax;
-      document.getElementById("qbslider").value = qbolsr;
+      document.getElementById("qbslider").value = qbulsr;
   }
 }
